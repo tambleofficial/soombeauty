@@ -1,3 +1,8 @@
 {
-  "m": {}
+  "m": {
+    "slot:home-brand-1": "/assets/uploads/20261126164438-tby5e.jpg",
+    "slot:home-brand-2": "/assets/uploads/20261126164438-rtyhj.jpg",
+    "slot:home-director": "/assets/uploads/20261126164438-1drbm.jpg",
+    "slot:home-prog-01": "/assets/uploads/20261126164438-kjeli.jpg"
+  }
 }
