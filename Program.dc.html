@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>시술 프로그램 | 숨뷰티 SOOM BEAUTY</title>
+<meta name="description" content="헤어스트록 눈썹, 패더링 눈썹, 퍼스널 입술. 나에게 맞는 프로그램을 한눈에 비교해보세요.">
+<link rel="canonical" href="https://soombeauty.pages.dev/program">
+<meta property="og:type" content="website"><meta property="og:site_name" content="SOOM BEAUTY"><meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="시술 프로그램 | 숨뷰티 SOOM BEAUTY"><meta property="og:description" content="헤어스트록 눈썹, 패더링 눈썹, 퍼스널 입술. 나에게 맞는 프로그램을 한눈에 비교해보세요.">
+<meta property="og:url" content="https://soombeauty.pages.dev/program"><meta property="og:image" content="https://soombeauty.pages.dev/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#F7F3EC">
+<link rel="alternate" type="application/rss+xml" title="SOOM BEAUTY Journal" href="/rss.xml">
+
+
+<script src="/assets/sj-cms.js?v=1"></script>
+<link rel="stylesheet" href="/assets/soom-m.css?v=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F6F1EA"/><text x="50" y="62" text-anchor="middle" font-family="serif" font-size="34" fill="#D96B35">숨</text></svg></template>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFDF9;color:#372A25;font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all;overflow-wrap:break-word}
+a{color:#372A25;text-decoration:none}
+a:hover{color:#C8754A}
+@keyframes soomFade{from{opacity:0}to{opacity:1}}
+@keyframes soomUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+<div style="position:relative;background:#FFFDF9;min-height:100vh;overflow:hidden">
+<dc-import name="SoomChrome" page="program" lang="{{ lang }}" on-lang="{{ setLang }}" hint-size="100%,0px"></dc-import>
+
+<section data-screen-label="01 Hero" style="z-index:0;position:relative;overflow:hidden;background:#F5EFE7;padding:180px clamp(20px,4vw,56px) 140px;box-sizing:border-box">
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1"><div data-par="40" style="position:absolute;left:15%;top:-10%;width:70%;height:120%;background:url(assets/hero-shadow.jpg) center/cover;opacity:.14;filter:blur(8px);-webkit-mask-image:radial-gradient(closest-side,#000 40%,transparent 100%);mask-image:radial-gradient(closest-side,#000 40%,transparent 100%)"></div></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;display:flex;flex-direction:column;animation:soomUp 1.2s ease .2s both">
+    <span style="font-size:12px;letter-spacing:.14em;color:#817670"><span style="color:#D96B35">02</span> / 05</span>
+    <h1 style="margin:22px 0 0;font-weight:300;font-size:clamp(64px,9vw,120px);line-height:1;letter-spacing:-.04em">PROGRAM</h1>
+    <b style="margin-top:30px;font-size:17px;font-weight:600">{{ hero.label }}</b>
+    <p style="margin:12px 0 0;max-width:440px;font-size:15px;line-height:1.75;color:#5E514B">{{ hero.sub }}</p>
+  </div>
+</section>
+
+<section data-screen-label="02 Compare" style="padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto">
+    <div data-reveal="1" style="display:flex;align-items:center;gap:12px;margin-bottom:40px"><span style="width:28px;height:1px;background:#C8754A"></span><span style="font-size:12px;letter-spacing:.22em;font-weight:600;color:#C8754A">WHICH ONE?</span></div>
+    <h2 data-reveal="1" style="margin:0 0 36px;font-weight:700;font-size:clamp(30px,3.8vw,52px);line-height:1.2;letter-spacing:-.045em">{{ t.cmpTitle }}</h2>
+    <div data-reveal="1" style="overflow-x:auto"><div style="min-width:680px;display:grid;grid-template-columns:1.3fr repeat(3,1fr);border-top:2px solid #372A25">
+      <span style="padding:18px 12px;font-size:12px;letter-spacing:.16em;color:#817670;border-bottom:1px solid #372A25"></span>
+      <sc-for list="{{ t.cols }}" as="c" hint-placeholder-count="3"><b style="padding:18px 12px;font-size:17px;text-align:center;border-bottom:1px solid #372A25">{{ c }}</b></sc-for>
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="5"><span style="padding:18px 12px;font-size:15px;border-bottom:1px solid #EAE0D2">{{ r.k }}</span><span style="padding:18px 12px;text-align:center;font-size:18px;color:#D96B35;border-bottom:1px solid #EAE0D2">{{ r.a }}</span><span style="padding:18px 12px;text-align:center;font-size:18px;color:#D96B35;border-bottom:1px solid #EAE0D2">{{ r.b }}</span><span style="padding:18px 12px;text-align:center;font-size:18px;color:#D96B35;border-bottom:1px solid #EAE0D2">{{ r.c }}</span></sc-for>
+    </div></div>
+    <p data-reveal="1" style="margin:16px 0 0;font-size:13px;color:#817670">{{ t.cmpNote }}</p>
+  </div>
+</section>
+
+<sc-for list="{{ programs }}" as="p" hint-placeholder-count="3">
+<section id="{{ p.id }}" data-screen-label="{{ p.label }}" style="background:{{ p.bg }};padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto">
+    <div data-reveal="1" style="display:flex;align-items:center;gap:12px;margin-bottom:48px"><span style="width:28px;height:1px;background:#C8754A"></span><span style="font-size:12px;letter-spacing:.22em;font-weight:600;color:#C8754A">PROGRAM — {{ p.en }}</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px clamp(40px,6vw,96px);align-items:start">
+      <div data-reveal="1" style="display:flex;flex-direction:column;gap:14px"><div data-slot-id="prog-{{ p.id }}" style="aspect-ratio:4/5;background:#EDE5D9;display:flex;align-items:flex-end;padding:14px;box-sizing:border-box;font-size:10px;color:rgba(55,42,37,.42)">{{ p.name }} 시술 사진</div><span style="font-size:13px;color:#817670">— {{ p.caption }}</span></div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <span data-reveal="1" style="font-size:88px;font-weight:800;line-height:.8;letter-spacing:-.06em;color:#C8754A">{{ p.no }}</span>
+        <h2 data-reveal="1" style="margin:0;font-weight:800;font-size:clamp(32px,4vw,56px);line-height:1.1;letter-spacing:-.05em">{{ p.name }}</h2>
+        <p data-reveal="1" style="margin:0;font-size:clamp(19px,1.8vw,24px);font-weight:600;line-height:1.5;letter-spacing:-.03em;color:#A85A33">{{ p.one }}</p>
+        <div data-reveal="1" style="position:relative;padding:28px 24px 20px;background:#FFF6E8;transform:rotate(-1deg);box-shadow:0 12px 26px rgba(55,42,37,.08)"><span style="position:absolute;left:24px;top:-10px;width:70px;height:20px;background:rgba(233,138,86,.35)"></span><b style="display:block;font-size:14px;letter-spacing:.08em;margin-bottom:10px">{{ t.forWho }}</b><sc-for list="{{ p.who }}" as="w" hint-placeholder-count="3"><span style="display:block;font-size:16px;line-height:1.9">☐ {{ w }}</span></sc-for></div>
+        <div data-reveal="1" style="display:flex;flex-direction:column;border-top:2px solid #372A25">
+          <sc-for list="{{ p.spec }}" as="s" hint-placeholder-count="4"><div style="display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #D8C7B2"><span style="font-size:12px;letter-spacing:.14em;font-weight:700;color:#A85A33">{{ s.k }}</span><span style="font-size:15px">{{ s.v }}</span></div></sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</sc-for>
+
+<section data-screen-label="Process" style="background:#F8F4EC;padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto">
+    <h2 data-reveal="1" style="margin:0 0 40px;font-weight:700;font-size:clamp(30px,3.8vw,52px);line-height:1.2;letter-spacing:-.045em">{{ t.procTitle }}</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px">
+      <sc-for list="{{ t.steps }}" as="s" hint-placeholder-count="4"><div data-reveal="1" style="background:#FFFDF9;border-radius:14px;overflow:hidden"><div style="padding:22px;display:flex;justify-content:space-between"><b style="font-size:12px;letter-spacing:.2em;color:#C8754A">STEP</b><span style="font-size:56px;font-weight:800;line-height:.8;letter-spacing:-.05em">{{ s.no }}</span></div><div style="border-top:2px dashed #E3D6C7;margin:0 16px"></div><div style="padding:18px 22px 24px;display:flex;flex-direction:column;gap:6px"><b style="font-size:21px;letter-spacing:-.03em">{{ s.k }}</b><span style="font-size:15px;color:#5E514B">{{ s.v }}</span></div></div></sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="FAQ" style="padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:960px;margin:0 auto">
+    <h2 data-reveal="1" style="margin:0 0 32px;font-weight:700;font-size:clamp(30px,3.8vw,52px);letter-spacing:-.045em">{{ t.faqTitle }}</h2>
+    <div style="display:flex;flex-direction:column;border-top:2px solid #372A25">
+      <sc-for list="{{ faq }}" as="f" hint-placeholder-count="5"><div style="border-bottom:1px solid #D8C7B2"><button onClick="{{ f.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;background:none;border:0;text-align:left;font:inherit;color:#372A25;cursor:pointer"><b style="font-size:17px"><span style="color:#D96B35;margin-right:10px">Q.</span>{{ f.q }}</b><span style="font-size:22px;color:#C8754A">{{ f.sign }}</span></button><sc-if value="{{ f.open }}"><p style="margin:0 0 22px;padding-left:30px;font-size:15px;line-height:1.8;color:#5E514B">{{ f.a }}</p></sc-if></div></sc-for>
+    </div>
+  </div>
+</section>
+
+
+<section data-screen-label="ac" style="background:#F8F4EC;padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px)"><div style="max-width:1280px;margin:0 auto"><div data-reveal="1" style="display:flex;align-items:center;gap:12px;margin-bottom:28px"><span style="width:28px;height:1px;background:#C8754A"></span><span style="font-size:12px;letter-spacing:.22em;font-weight:600;color:#C8754A">AFTERCARE</span></div><h2 data-reveal="1" style="margin:0 0 40px;font-weight:700;font-size:clamp(30px,3.8vw,52px);line-height:1.2;letter-spacing:-.045em">{{ ex.ac.title }}</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px"><sc-for list="{{ ex.ac.items }}" as="it" hint-placeholder-count="4"><div data-reveal="1" style="background:#FFFDF9;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;min-height:180px;box-sizing:border-box"><span style="font-size:15px;font-weight:700;color:#C8754A">{{ it.no }}</span><b style="font-size:21px;letter-spacing:-.03em;line-height:1.35">{{ it.k }}</b><span style="font-size:15px;line-height:1.7;color:#5E514B;margin-top:auto">{{ it.v }}</span></div></sc-for></div><sc-if value="{{ ex.ac.note }}"><p style="margin:18px 0 0;font-size:13px;color:#817670">{{ ex.ac.note }}</p></sc-if></div></section>
+
+<section data-screen-label="CTA" style="position:relative;z-index:0;background:#F5EFE7;padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px);text-align:center"><div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1"><div data-par="40" style="position:absolute;left:15%;top:-10%;width:70%;height:120%;background:url(assets/hero-shadow.jpg) center/cover;opacity:.14;filter:blur(8px);-webkit-mask-image:radial-gradient(closest-side,#000 40%,transparent 100%);mask-image:radial-gradient(closest-side,#000 40%,transparent 100%)"></div></div>
+  <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:22px"><h2 data-reveal="1" style="margin:0;font-weight:700;font-size:clamp(28px,3.4vw,46px);line-height:1.3;letter-spacing:-.04em;color:#372A25;white-space:pre-line">{{ t.cta }}</h2><div data-reveal="1" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px"><a href="https://map.naver.com/p/entry/place/2032343522" target="_blank" style="height:54px;padding:0 28px;border-radius:999px;background:#372A25;color:#FFFDF9;display:inline-flex;align-items:center;font-size:15px;font-weight:600" style-hover="color:#FFFDF9;background:#D96B35">{{ t.ctaA }}</a><a href="#kakao" style="height:54px;padding:0 28px;border-radius:999px;background:#FEE500;color:#191919;display:inline-flex;align-items:center;font-size:15px;font-weight:600" style-hover="color:#191919">{{ t.ctaB }}</a></div></div>
+</section>
+
+<dc-import name="SoomFooter" lang="{{ lang }}" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: (window.localStorage && localStorage.getItem('soom-lang')) || 'ko', faq: 0 };
+  componentDidMount() { document.documentElement.lang = this.state.lang; }
+  renderVals() {
+    const EXD = {"ko":{"pr":{"title":"가격 안내","items":[{"k":"헤어스트록 눈썹","v":"가격 입력","n":"리터치 포함 여부 확인"},{"k":"패더링 눈썹","v":"가격 입력","n":"리터치 포함 여부 확인"},{"k":"퍼스널 입술","v":"가격 입력","n":"리터치 포함 여부 확인"}],"note":"정확한 비용은 현재 상태 확인 후 상담에서 안내드립니다."},"ac":{"title":"시술 후, 이렇게 관리하세요","items":[{"no":"D-DAY","k":"물 닿지 않게","v":"시술 당일은 시술 부위에 물이 닿지 않게 해주세요"},{"no":"D+1~7","k":"각질은 그대로","v":"각질은 억지로 떼지 말고 자연스럽게 떨어지게"},{"no":"D+7","k":"사우나 · 수영 피하기","v":"회복 기간 동안 땀과 열을 피해주세요"},{"no":"RETOUCH","k":"리터치로 완성","v":"한 번 더 다듬어 디자인을 완성합니다"}],"note":"개인 상태에 따라 관리 안내가 달라질 수 있습니다."}},"en":{"pr":{"title":"Pricing","items":[{"k":"Hair Stroke Brow","v":"Price TBC","n":"Touch-up included? TBC"},{"k":"Feathering Brow","v":"Price TBC","n":"Touch-up included? TBC"},{"k":"Personal Lip","v":"Price TBC","n":"Touch-up included? TBC"}],"note":"Exact pricing is given at consultation after checking your current state."},"ac":{"title":"After your procedure","items":[{"no":"D-DAY","k":"Keep it dry","v":"Keep the area dry on the day"},{"no":"D+1~7","k":"Let it flake","v":"Do not pick; let flakes fall naturally"},{"no":"D+7","k":"Avoid heat","v":"Skip sauna and swimming while healing"},{"no":"RETOUCH","k":"Touch-up","v":"A second session completes the design"}],"note":"Aftercare may vary with your condition."}}}; const ex = EXD[this.state.lang] || EXD.ko;
+    const HR = {"ko":{"eb":"PROGRAM","title":"같은 얼굴에\n같은 디자인은 없습니다.","sub":"세 가지 프로그램 중 나에게 맞는 것을 찾아보세요.","items":[["01","헤어스트록 눈썹","민낯에도 원래 내 눈썹처럼","#hair-stroke"],["02","패더링 눈썹","결 + 음영으로 정돈된 눈썹","#feathering"],["03","퍼스널 입술","립 없이도 생기 있는 입술","#lip"]]},"en":{"eb":"PROGRAM","title":"No two faces\nshare one design.","sub":"Find the one of our three programs that suits you.","items":[["01","Hair Stroke Brow","Like your own, even bare-faced","#hair-stroke"],["02","Feathering Brow","Strokes + shading, neatly defined","#feathering"],["03","Personal Lip","Fresh colour without lipstick","#lip"]]}}; const HX = HR[this.state.lang] || HR.ko;
+    const hero = { ...HX, label: this.state.lang === 'en' ? "Programs" : "프로그램", items: HX.items.map(x => ({ no: x[0], k: x[1], v: x[2], href: x[3], target: /^https/.test(x[3]) ? '_blank' : '_self', arrow: x[3][0] === '#' ? '↓' : '→' })) };
+    const L = this.state.lang, S = this.state;
+    const T = {
+      ko: {
+        heroSub: '같은 얼굴에 같은 디자인은 없습니다.\n세 가지 중 나에게 맞는 걸 찾아보세요.',
+        names: ['헤어스트록 눈썹', '패더링 눈썹', '퍼스널 입술'], ones: ['민낯에도 원래 내 눈썹처럼', '결 + 음영으로 정돈된 눈썹', '립 없이도 생기 있는 입술'],
+        caps: ['한 올 한 올 결을 그려 넣는 방식', '결과 음영을 함께 표현하는 방식', '입술 본연의 색과 라인을 살리는 방식'],
+        who: [['숱이 적거나 빈 곳이 있어요', '진한 눈썹은 부담스러워요', '자연스러운 결을 원해요'], ['매일 눈썹 그리기 귀찮아요', '좌우가 짝짝이예요', '또렷한 느낌을 원해요'], ['입술 색이 흐리거나 칙칙해요', '입술 라인이 흐려요', '자연스러운 혈색을 원해요']],
+        specK: ['DESIGN POINT', '소요 시간', '리터치', '유지 기간'],
+        specV: [['기존 눈썹의 방향 · 길이 · 결', '[N]시간 [확인]', '[N]주 후 [확인]', '개인차 있음 [확인]'], ['빈 곳의 밀도와 전체 균형', '[N]시간 [확인]', '[N]주 후 [확인]', '개인차 있음 [확인]'], ['입술 본연의 색 · 라인 · 톤', '[N]시간 [확인]', '[N]주 후 [확인]', '개인차 있음 [확인]']],
+        forWho: '이런 분이라면 체크!',
+        cmpTitle: '한눈에 비교해보세요', cols: ['헤어스트록', '패더링', '퍼스널 입술'],
+        rowK: ['민낯에도 자연스럽게', '또렷하고 정돈된 느낌', '숱이 적은 눈썹', '흐린 입술 색', '데일리 메이크업 시간 단축'],
+        cmpNote: '● 잘 맞아요 　○ 상담 후 결정 　– 해당 없음 · 최종 방향은 상담에서 함께 정합니다.',
+        procTitle: '어떤 프로그램이든, 같은 4단계',
+        steps: [{ no: '01', k: '카톡 상담', v: '사진 한 장 보내기' }, { no: '02', k: '디자인', v: '먼저 그려보고 확인' }, { no: '03', k: '시술', v: '확정된 디자인으로' }, { no: '04', k: '리터치', v: '한 번 더 다듬어 완성' }],
+        faqTitle: '자주 묻는 질문',
+        faq: [['상담만 먼저 받을 수 있나요?', '네, 카카오톡으로 사진을 보내주시면 먼저 안내드립니다.'], ['기존 반영구가 남아 있어도 되나요?', '현재 상태를 사진으로 먼저 확인한 뒤 안내드립니다.'], ['아프지 않나요?', '[확인 후 입력] 통증은 개인차가 있습니다.'], ['리터치는 꼭 받아야 하나요?', '[확인 후 입력]'], ['유지 기간은 어느 정도인가요?', '[확인 후 입력] 피부 타입과 관리에 따라 달라집니다.']],
+        cta: '어떤 프로그램이 맞을지 모르겠다면\n사진 한 장만 보내주세요.', ctaA: '네이버 예약', ctaB: '카톡 상담'
+      },
+      en: {
+        heroSub: 'No two faces share one design.\nFind the one that suits you.',
+        names: ['Hair Stroke Brow', 'Feathering Brow', 'Personal Lip'], ones: ['Like your own, even bare-faced', 'Strokes + shading, neatly defined', 'Fresh colour without lipstick'],
+        caps: ['Individual hair-like strokes', 'Strokes combined with soft shading', 'Bringing out natural lip colour and line'],
+        who: [['My brows are sparse or patchy', 'Bold brows feel heavy', 'I want natural strokes'], ['I draw my brows daily', 'My brows are uneven', 'I want a defined look'], ['My lips look pale or dull', 'My lip line is faint', 'I want a natural tint']],
+        specK: ['DESIGN POINT', 'DURATION', 'TOUCH-UP', 'LONGEVITY'],
+        specV: [['Direction · length · grain', '[N] h [TBC]', 'After [N] weeks [TBC]', 'Varies [TBC]'], ['Density and balance', '[N] h [TBC]', 'After [N] weeks [TBC]', 'Varies [TBC]'], ['Colour · line · tone', '[N] h [TBC]', 'After [N] weeks [TBC]', 'Varies [TBC]']],
+        forWho: 'Tick if this is you!',
+        cmpTitle: 'Compare at a glance', cols: ['Hair stroke', 'Feathering', 'Personal lip'],
+        rowK: ['Natural even bare-faced', 'Defined, polished look', 'Sparse brows', 'Pale lip colour', 'Less daily makeup time'],
+        cmpNote: '● Great fit 　○ Decide at consultation 　– N/A · The final direction is set together at consultation.',
+        procTitle: 'Every program, the same 4 steps',
+        steps: [{ no: '01', k: 'Kakao consult', v: 'Send one photo' }, { no: '02', k: 'Design', v: 'Drawn and approved first' }, { no: '03', k: 'Procedure', v: 'With the agreed design' }, { no: '04', k: 'Touch-up', v: 'Refined once more' }],
+        faqTitle: 'FAQ',
+        faq: [['Can I consult first?', 'Yes, send a photo on Kakao and we will advise.'], ['Can I come with old PMU?', 'We check your current state from a photo first.'], ['Does it hurt?', '[TBC] Sensitivity varies.'], ['Do I need a touch-up?', '[TBC]'], ['How long does it last?', '[TBC] Varies with skin type and care.']],
+        cta: 'Not sure which program fits?\nJust send us one photo.', ctaA: 'Book on Naver', ctaB: 'Kakao consult'
+      }
+    };
+    const R = T[L] || T.ko, EN = ['HAIR STROKE', 'FEATHERING', 'PERSONAL LIP'], ID = ['hair-stroke', 'feathering', 'lip'];
+    const marks = [['●', '○', '–'], ['○', '●', '–'], ['●', '●', '–'], ['–', '–', '●'], ['○', '●', '●']];
+    return { ex, hero, t: R, lang: L, setLang: l => { localStorage.setItem('soom-lang', l); document.documentElement.lang = l; this.setState({ lang: l }); },
+      index: R.names.map((n, i) => ({ no: '0' + (i + 1), name: n, one: R.ones[i], href: '#' + ID[i] })),
+      rows: R.rowK.map((k, i) => ({ k, a: marks[i][0], b: marks[i][1], c: marks[i][2] })),
+      programs: R.names.map((n, i) => ({ id: ID[i], label: '0' + (i + 3) + ' ' + EN[i], no: '0' + (i + 1), en: EN[i], name: n, one: R.ones[i], caption: R.caps[i], who: R.who[i], bg: i % 2 ? '#F8F4EC' : '#FFFDF9', spec: R.specK.map((k, j) => ({ k, v: R.specV[i][j] })) })),
+      faq: R.faq.map((f, i) => ({ q: f[0], a: f[1], open: S.faq === i, sign: S.faq === i ? '−' : '+', toggle: () => this.setState({ faq: S.faq === i ? -1 : i }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

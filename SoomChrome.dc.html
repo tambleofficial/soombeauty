@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div>
+<div ref="{{ grainRef }}" style="position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.035;mix-blend-mode:multiply"></div>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:60;background:{{ headerBg }};backdrop-filter:{{ headerBlur }};-webkit-backdrop-filter:{{ headerBlur }};border-bottom:1px solid {{ headerLine }};transition:background .6s ease,border-color .6s ease">
+  <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px);height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="/" aria-label="SOOM BEAUTY" style="display:flex;align-items:center;min-height:44px"><img src="{{ logoSrc }}" alt="SOOM BEAUTY BROWS &amp; LIPS" style="height:32px;width:auto;display:block"></a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:clamp(18px,2.6vw,44px)">
+        <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
+          <a href="{{ n.href }}" style="position:relative;padding:14px 0;font-size:12px;letter-spacing:.22em;font-weight:500;color:{{ ink }};transition:color .4s">{{ n.label }}<span style="position:absolute;left:50%;bottom:4px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#D96B35;opacity:{{ n.dot }}"></span></a>
+        </sc-for>
+      </nav>
+      <div style="display:flex;align-items:center;gap:16px">
+        <div style="display:flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.16em;flex-shrink:0;white-space:nowrap">
+          <button onClick="{{ setKo }}" style="background:none;border:0;padding:12px 4px;font:inherit;letter-spacing:inherit;cursor:pointer;color:{{ koColor }}">KR</button>
+          <span style="color:{{ sepColor }}">|</span>
+          <button onClick="{{ setEn }}" style="background:none;border:0;padding:12px 4px;font:inherit;letter-spacing:inherit;cursor:pointer;color:{{ enColor }}">EN</button>
+        </div>
+        <a href="https://www.instagram.com/soom_pmu" target="_blank" aria-label="Instagram" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:{{ ink }}">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"></circle></svg>
+        </a>
+        <a href="https://map.naver.com/p/entry/place/2032343522" target="_blank" data-magnetic="1" style="display:inline-flex;align-items:center;height:44px;padding:0 24px;border-radius:999px;background:{{ resBg }};border:1px solid {{ resBorder }};color:{{ resColor }};font-size:11px;letter-spacing:.22em;font-weight:500;transition:background .4s" style-hover="background:#D96B35;color:#FFFDF9">RESERVATION</a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:4px">
+        <button onClick="{{ toggleLang }}" style="white-space:nowrap;flex-shrink:0;min-width:44px;height:44px;padding:0 10px;background:none;border:0;font-size:11px;letter-spacing:.16em;color:{{ ink }};font-family:inherit">{{ otherLang }}</button>
+        <button onClick="{{ toggleMenu }}" aria-label="Menu" style="width:44px;height:44px;background:none;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:0">
+          <span style="display:block;width:24px;height:1px;background:{{ ink }}"></span>
+          <span style="display:block;width:16px;height:1px;background:{{ ink }};margin-left:8px"></span>
+        </button>
+      </div>
+    </sc-if>
+  </div>
+</header>
+
+<div style="position:fixed;inset:0;z-index:70;background:#F8F4EC;display:flex;flex-direction:column;padding:16px 20px 24px;box-sizing:border-box;clip-path:{{ menuClip }};transition:clip-path .7s cubic-bezier(.7,0,.2,1);visibility:{{ menuVis }}">
+  <div style="display:flex;justify-content:space-between;align-items:center;height:60px">
+    <img src="/assets/chrome-logo.webp" alt="SOOM BEAUTY" style="height:28px;width:auto">
+    <button onClick="{{ toggleMenu }}" aria-label="Close" style="width:44px;height:44px;background:none;border:0;font-size:30px;font-weight:200;color:#372A25">×</button>
+  </div>
+  <nav style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <sc-for list="{{ nav }}" as="m" hint-placeholder-count="5">
+      <a href="{{ m.href }}" style="display:flex;align-items:baseline;gap:18px;padding:16px 0;border-bottom:1px solid #EAE0D2;color:#372A25">
+        <span style="font-size:12px;color:#C8754A;min-width:28px">{{ m.no }}</span>
+        <span style="font-size:30px;font-weight:300;letter-spacing:.04em;line-height:1">{{ m.label }}</span>
+        <span style="font-size:13px;color:#817670;margin-left:auto">{{ m.sub }}</span>
+      </a>
+    </sc-for>
+  </nav>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+    <a href="https://www.instagram.com/soom_pmu" target="_blank" style="height:48px;border:1px solid #D8C7B2;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.18em;color:#372A25">INSTAGRAM</a>
+    <a href="https://map.naver.com/p/entry/place/2032343522" target="_blank" style="height:48px;border:1px solid #D8C7B2;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.18em;color:#372A25">NAVER</a>
+    <a href="#kakao" style="height:48px;border:1px solid #D8C7B2;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:11px;letter-spacing:.18em;color:#372A25">KAKAO</a>
+  </div>
+</div>
+
+<sc-if value="{{ showFloat }}" hint-placeholder-val="{{ true }}">
+  <div style="position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:8px">
+    <sc-for list="{{ floatItems }}" as="fi" hint-placeholder-count="5">
+      <a href="{{ fi.href }}" target="{{ fi.target }}" aria-label="{{ fi.label }}" onMouseEnter="{{ fi.enter }}" onMouseLeave="{{ fi.leave }}" style="position:relative;width:46px;height:46px;border-radius:50%;background:{{ fi.bg }};border:1px solid {{ fi.border }};display:flex;align-items:center;justify-content:center;color:{{ fi.color }};transition:all .3s">
+        <span style="position:absolute;right:56px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:10px;letter-spacing:.2em;color:#372A25;background:#FFFDF9;border:1px solid #EAE0D2;padding:6px 10px;border-radius:999px;opacity:{{ fi.labelOp }};transition:opacity .3s;pointer-events:none">{{ fi.label }}</span>
+        <sc-if value="{{ fi.cal }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg></sc-if>
+        <sc-if value="{{ fi.chat }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M12 4C7 4 3.5 7 3.5 10.8c0 2.4 1.5 4.4 3.8 5.6L6.5 20l3.9-2.5c.5.1 1 .1 1.6.1 5 0 8.5-3 8.5-6.8S17 4 12 4z"></path></svg></sc-if>
+        <sc-if value="{{ fi.phone }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M5 4h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 6.1 6.1l1.4-2.3L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.9 20 4 13.1 3.5 5.6A1.5 1.5 0 0 1 5 4z"></path></svg></sc-if>
+        <sc-if value="{{ fi.pin }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"></path><circle cx="12" cy="10" r="2.3"></circle></svg></sc-if>
+        <sc-if value="{{ fi.ig }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"></circle></svg></sc-if>
+      </a>
+    </sc-for>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:12px;right:12px;bottom:12px;z-index:55;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:5px;border-radius:999px;background:rgba(255,253,249,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid #EAE0D2">
+    <a href="#kakao" style="height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;color:#372A25">{{ t.consult }}</a>
+    <a href="https://map.naver.com/p/entry/place/2032343522" target="_blank" style="height:48px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;background:#D96B35;color:#FFFDF9">{{ t.book }}</a>
+  </div>
+</sc-if>
+
+<div ref="{{ veilRef }}" style="position:fixed;inset:0;z-index:200;background:#F8F4EC;transform:translateY(0);display:flex;align-items:center;justify-content:center;pointer-events:none">
+  <img src="/assets/chrome-soom.webp" alt="" style="width:120px;height:auto;opacity:.9">
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;page&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;program&quot;,&quot;cases&quot;,&quot;journal&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;ko&quot;,&quot;en&quot;],&quot;default&quot;:&quot;ko&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;onLang&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(l:string)=&gt;void&quot;}}">
+class Component extends DCLogic {
+  state = { scrolled: false, menuOpen: false, mob: false, hoverF: -1 };
+  grainRef = React.createRef(); veilRef = React.createRef();
+
+  componentDidMount() {
+    const g = this.grainRef.current;
+    if (g) g.style.backgroundImage = "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .22 0 0 0 0 .16 0 0 0 0 .13 0 0 0 1.4 -.35'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")";
+    const v = this.veilRef.current;
+    if (v) { v.style.transition = 'transform .8s cubic-bezier(.7,0,.2,1)'; setTimeout(() => { v.style.transform = 'translateY(-100%)'; }, 80); }
+
+    this.rs = () => { const m = innerWidth < 1024; if (m !== this.state.mob) this.setState({ mob: m }); };
+    this.rs(); addEventListener('resize', this.rs);
+
+    const ease = 'cubic-bezier(.2,.7,.2,1)';
+    this.io = new IntersectionObserver(es => es.forEach(en => {
+      if (!en.isIntersecting) return; const e = en.target;
+      e.style.transitionDelay = (e.dataset.delay || 0) + 'ms';
+      if (e.hasAttribute('data-clip')) e.style.clipPath = 'inset(0 0 0 0)'; else { e.style.opacity = 1; e.style.transform = 'none'; }
+      this.io.unobserve(e);
+    }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    this.prep = () => {
+      document.querySelectorAll('[data-reveal]:not([data-rv])').forEach(e => { e.setAttribute('data-rv', '1'); e.style.opacity = 0; e.style.transform = 'translateY(36px)'; e.style.transition = `opacity 1.2s ${ease}, transform 1.2s ${ease}`; this.io.observe(e); });
+      document.querySelectorAll('[data-clip]:not([data-rv])').forEach(e => { e.setAttribute('data-rv', '1'); e.style.clipPath = 'inset(100% 0 0 0)'; e.style.transition = 'clip-path 1.5s cubic-bezier(.7,0,.2,1)'; this.io.observe(e); });
+      document.querySelectorAll('[data-draw]:not([data-rv])').forEach(e => { e.setAttribute('data-rv', '1'); e.style.strokeDasharray = 1; e.style.strokeDashoffset = 1; });
+      this.heroY = [...document.querySelectorAll('[data-hero-y]')]; this.heroS = [...document.querySelectorAll('[data-hero-s]')];
+      this.par = [...document.querySelectorAll('[data-par]')]; this.draw = [...document.querySelectorAll('[data-draw]')];
+      this.tick();
+    };
+    this.mo = new MutationObserver(() => { if (this.mt) return; this.mt = setTimeout(() => { this.mt = 0; this.prep(); }, 50); });
+    this.mo.observe(document.body, { childList: true, subtree: true });
+    this.onScroll = () => { if (this.raf) return; this.raf = requestAnimationFrame(() => { this.raf = 0; this.tick(); }); };
+    addEventListener('scroll', this.onScroll, { passive: true });
+    this.prep();
+
+    if (matchMedia('(pointer:fine)').matches) {
+      this.onMove = e => {
+        const m = e.target.closest && e.target.closest('[data-magnetic]');
+        if (this.mag && this.mag !== m) { this.mag.style.transform = ''; this.mag = null; }
+        if (m) { const b = m.getBoundingClientRect(); m.style.transition = 'transform .45s cubic-bezier(.2,.7,.2,1), background .4s, color .4s'; m.style.transform = `translate(${(e.clientX - b.left - b.width / 2) * .2}px,${(e.clientY - b.top - b.height / 2) * .3}px)`; this.mag = m; }
+      };
+      addEventListener('mousemove', this.onMove);
+    }
+
+    this.onClick = e => {
+      const a = e.target.closest && e.target.closest('a'); if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      const href = a.getAttribute('href') || ''; if (a.target === '_blank' || !/\.dc\.html(#.*)?$/.test(href)) return;
+      e.preventDefault(); const v = this.veilRef.current;
+      if (!v) { location.href = a.href; return; }
+      v.style.transition = 'none'; v.style.transform = 'translateY(100%)'; v.getBoundingClientRect();
+      v.style.transition = 'transform .7s cubic-bezier(.7,0,.2,1)'; v.style.transform = 'translateY(0)';
+      setTimeout(() => { location.href = a.href; }, 720);
+    };
+    document.addEventListener('click', this.onClick, true);
+  }
+  componentWillUnmount() {
+    removeEventListener('resize', this.rs); removeEventListener('scroll', this.onScroll);
+    this.onMove && removeEventListener('mousemove', this.onMove); document.removeEventListener('click', this.onClick, true);
+    this.io && this.io.disconnect(); this.mo && this.mo.disconnect();
+  }
+  tick() {
+    const y = scrollY, h = innerHeight, p = Math.min(y / h, 1);
+    const s = y > 40; if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    (this.heroY || []).forEach(e => { e.style.transform = `translateY(${p * parseFloat(e.dataset.heroY)}px)`; });
+    (this.heroS || []).forEach(e => { e.style.transform = `scale(${1 + p * parseFloat(e.dataset.heroS)})`; });
+    (this.par || []).forEach(e => { const r = e.getBoundingClientRect(); const k = ((r.top + r.height / 2) - h / 2) / h; e.style.transform = `translateY(${(k * parseFloat(e.dataset.par)).toFixed(1)}px)`; });
+    (this.draw || []).forEach(e => { const box = (e.closest('[data-draw-root]') || e.ownerSVGElement || e).getBoundingClientRect(); const q = Math.max(0, Math.min(1, (h * .85 - box.top) / (box.height * .7))); e.style.strokeDashoffset = 1 - q; });
+  }
+
+  renderVals() {
+    const lang = this.props.lang || 'ko', mob = this.state.mob, page = this.props.page || 'home';
+    const T = {
+      ko: { consult: '상담하기', book: '예약하기', subs: ['브랜드 이야기', '시술 프로그램', '작업 사례', '뷰티 저널', '상담 · 예약 · 위치'], float: ['네이버 예약', '카카오 상담', '010-5005-3809', '오시는 길', '인스타그램'] },
+      en: { consult: 'Consult', book: 'Book', subs: ['Our story', 'Programs', 'Selected work', 'Beauty journal', 'Consult · Book · Visit'], float: ['Naver booking', 'Kakao chat', '010-5005-3809', 'Directions', 'Instagram'] }
+    };
+    const t = T[lang] || T.ko;
+    const pages = [['about', 'ABOUT', 'About.dc.html'], ['program', 'PROGRAM', 'Program.dc.html'], ['cases', 'CASES', 'Cases.dc.html'], ['journal', 'JOURNAL', 'Journal.dc.html'], ['contact', 'CONTACT', 'Contact.dc.html']];
+    const setLang = l => { this.props.onLang && this.props.onLang(l); };
+    const hf = this.state.hoverF; const light = !!this.props.heroDark && !this.state.scrolled && !this.state.menuOpen;
+    const fl = [
+      { href: 'https://map.naver.com/p/entry/place/2032343522', target: '_blank', cal: true },
+      { href: '#kakao', target: '_self', chat: true },
+      { href: 'tel:01050053809', target: '_self', phone: true },
+      { href: 'Contact.dc.html#location', target: '_self', pin: true },
+      { href: 'https://www.instagram.com/soom_pmu', target: '_blank', ig: true }
+    ];
+    return {
+      t, grainRef: this.grainRef, veilRef: this.veilRef,
+      headerBg: this.state.scrolled ? 'rgba(248,244,236,.92)' : 'rgba(248,244,236,0)',
+      headerBlur: this.state.scrolled ? 'blur(14px)' : 'none',
+      headerLine: this.state.scrolled ? 'rgba(216,199,178,.6)' : 'rgba(216,199,178,0)',
+      isDesktop: !mob, isMobile: mob,
+      nav: pages.map((p, i) => ({ href: p[2], label: p[1], no: '0' + (i + 1), sub: t.subs[i], dot: p[0] === page ? 1 : 0 })),
+      koColor: light ? (lang === 'ko' ? '#FFFDF9' : 'rgba(255,253,249,.62)') : (lang === 'ko' ? '#372A25' : '#9A8E86'),
+      enColor: light ? (lang === 'en' ? '#FFFDF9' : 'rgba(255,253,249,.62)') : (lang === 'en' ? '#372A25' : '#9A8E86'),
+      ink: light ? '#FFFDF9' : '#372A25', sepColor: light ? 'rgba(255,253,249,.5)' : '#D8C7B2',
+      logoSrc: light ? 'assets/soom-logo-cream.webp' : 'assets/soom-logo.webp',
+      resBg: light ? 'transparent' : '#372A25', resBorder: light ? 'rgba(255,253,249,.8)' : '#372A25', resColor: '#FFFDF9',
+      setKo: () => setLang('ko'), setEn: () => setLang('en'),
+      otherLang: lang === 'ko' ? 'EN' : 'KR', toggleLang: () => setLang(lang === 'ko' ? 'en' : 'ko'),
+      toggleMenu: () => this.setState({ menuOpen: !this.state.menuOpen }),
+      menuClip: this.state.menuOpen ? 'inset(0 0 0 0)' : 'inset(0 0 100% 0)',
+      menuVis: this.state.menuOpen || this.state.menuWasOpen ? 'visible' : 'visible',
+      showFloat: !mob,
+      floatItems: fl.map((f, i) => ({ ...f, label: t.float[i], labelOp: hf === i ? 1 : 0,
+        bg: hf === i ? '#372A25' : 'rgba(255,253,249,.88)', color: hf === i ? '#FFFDF9' : '#372A25', border: hf === i ? '#372A25' : '#EAE0D2',
+        enter: () => this.setState({ hoverF: i }), leave: () => this.setState({ hoverF: -1 }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

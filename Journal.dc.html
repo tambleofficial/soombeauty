@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>뷰티 저널 | 숨뷰티 SOOM BEAUTY</title>
+<meta name="description" content="시술 전에 알아두면 좋은 눈썹·입술 반영구 이야기와 상담 팁.">
+<link rel="canonical" href="https://soombeauty.pages.dev/journal">
+<meta property="og:type" content="website"><meta property="og:site_name" content="SOOM BEAUTY"><meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="뷰티 저널 | 숨뷰티 SOOM BEAUTY"><meta property="og:description" content="시술 전에 알아두면 좋은 눈썹·입술 반영구 이야기와 상담 팁.">
+<meta property="og:url" content="https://soombeauty.pages.dev/journal"><meta property="og:image" content="https://soombeauty.pages.dev/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#F7F3EC">
+<link rel="alternate" type="application/rss+xml" title="SOOM BEAUTY Journal" href="/rss.xml">
+
+
+<script src="/assets/sj-cms.js?v=1"></script>
+<link rel="stylesheet" href="/assets/soom-m.css?v=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F6F1EA"/><text x="50" y="62" text-anchor="middle" font-family="serif" font-size="34" fill="#D96B35">숨</text></svg></template>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFDF9;color:#372A25;font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all;overflow-wrap:break-word}
+a{color:#372A25;text-decoration:none}
+a:hover{color:#C8754A}
+@keyframes soomFade{from{opacity:0}to{opacity:1}}
+@keyframes soomUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+<div style="position:relative;background:#FFFDF9;min-height:100vh;overflow:hidden">
+<dc-import name="SoomChrome" page="journal" lang="{{ lang }}" on-lang="{{ setLang }}" hint-size="100%,0px"></dc-import>
+
+<section data-screen-label="01 Hero" style="z-index:0;position:relative;overflow:hidden;background:#F5EFE7;padding:180px clamp(20px,4vw,56px) 140px;box-sizing:border-box">
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1"><div data-par="40" style="position:absolute;left:15%;top:-10%;width:70%;height:120%;background:url(assets/hero-shadow.jpg) center/cover;opacity:.14;filter:blur(8px);-webkit-mask-image:radial-gradient(closest-side,#000 40%,transparent 100%);mask-image:radial-gradient(closest-side,#000 40%,transparent 100%)"></div></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;display:flex;flex-direction:column;animation:soomUp 1.2s ease .2s both">
+    <span style="font-size:12px;letter-spacing:.14em;color:#817670"><span style="color:#D96B35">04</span> / 05</span>
+    <h1 style="margin:22px 0 0;font-weight:300;font-size:clamp(64px,9vw,120px);line-height:1;letter-spacing:-.04em">JOURNAL</h1>
+    <b style="margin-top:30px;font-size:17px;font-weight:600">{{ hero.label }}</b>
+    <p style="margin:12px 0 0;max-width:440px;font-size:15px;line-height:1.75;color:#5E514B">{{ hero.sub }}</p>
+  </div>
+</section>
+
+<section id="news" data-screen-label="02 Front Page" style="background:#FFFDF9;padding:clamp(70px,8vw,110px) clamp(20px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="border-top:3px double #372A25"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:0;border-bottom:1px solid #372A25">
+      <article data-reveal="1" style="display:flex;flex-direction:column;gap:16px;padding:32px clamp(0px,2.4vw,32px) 36px 0;border-right:1px solid #D8C7B2">
+        <span style="align-self:flex-start;background:#C8754A;color:#FFFDF9;font-size:11px;font-weight:700;letter-spacing:.16em;padding:5px 9px">TOP STORY · {{ lead.cat }}</span>
+        <h1 style="margin:0;font-size:clamp(30px,3.4vw,46px);font-weight:800;line-height:1.2;letter-spacing:-.045em">{{ lead.title }}</h1>
+        <div style="column-count:2;column-gap:28px;column-rule:1px solid #EAE0D2;font-size:15px;line-height:1.85;color:#5E514B"><sc-for list="{{ lead.body }}" as="b" hint-placeholder-count="3"><p style="margin:0 0 12px">{{ b }}</p></sc-for></div>
+      </article>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ side }}" as="a" hint-placeholder-count="2">
+          <article data-reveal="1" style="display:flex;flex-direction:column;gap:12px;padding:32px 0 32px clamp(0px,2.4vw,32px);border-bottom:1px solid #D8C7B2">
+            <span style="align-self:flex-start;background:#372A25;color:#FFFDF9;font-size:11px;font-weight:700;letter-spacing:.16em;padding:5px 9px">{{ a.cat }}</span>
+            <h2 style="margin:0;font-size:24px;font-weight:800;line-height:1.3;letter-spacing:-.035em">{{ a.title }}</h2>
+            <sc-for list="{{ a.body }}" as="b" hint-placeholder-count="2"><p style="margin:0;font-size:15px;line-height:1.8;color:#5E514B">{{ b }}</p></sc-for>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tips" data-screen-label="03 Tips" style="padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto">
+    <div data-reveal="1" style="display:flex;align-items:center;gap:12px;margin-bottom:40px"><span style="width:28px;height:1px;background:#C8754A"></span><span style="font-size:12px;letter-spacing:.22em;font-weight:600;color:#C8754A">QUICK TIPS</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:28px 20px">
+      <sc-for list="{{ tips }}" as="p" hint-placeholder-count="4"><div data-reveal="1" onMouseEnter="{{ p.enter }}" style="display:flex;flex-direction:column;gap:14px;padding:28px 24px 30px;border-radius:24px;background:{{ p.bg }};border:1px solid {{ p.line }};transition:background .6s,border-color .6s,transform .6s;transform:translateY({{ p.y }})"><div style="display:flex;justify-content:space-between;align-items:flex-start"><span style="font-size:clamp(64px,6vw,96px);font-weight:200;line-height:.8;letter-spacing:-.07em;color:{{ p.numColor }};transition:color .6s">{{ p.no }}</span><span style="font-size:20px;color:#C97850;opacity:{{ p.arrow }}">→</span></div><b style="font-size:clamp(18px,1.6vw,21px);letter-spacing:-.03em;line-height:1.35;margin-top:18px">{{ p.k }}</b><span style="font-size:14px;line-height:1.7;color:#665A54">{{ p.v }}</span></div></sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="film" data-screen-label="04 Film" style="position:relative;z-index:0;background:#F5EFE7;padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px)"><div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1"><div data-par="40" style="position:absolute;left:15%;top:-10%;width:70%;height:120%;background:url(assets/hero-shadow.jpg) center/cover;opacity:.14;filter:blur(8px);-webkit-mask-image:radial-gradient(closest-side,#000 40%,transparent 100%);mask-image:radial-gradient(closest-side,#000 40%,transparent 100%)"></div></div>
+  <div style="max-width:1280px;margin:0 auto">
+    <div data-reveal="1" style="display:flex;align-items:center;gap:12px;margin-bottom:40px"><span style="width:28px;height:1px;background:#C8754A"></span><span style="font-size:12px;letter-spacing:.22em;font-weight:600;color:#C8754A">SOOM FILM</span></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px">
+      <sc-for list="{{ t.films }}" as="f" hint-placeholder-count="4"><div data-slot-id="journal-film-{{ $index }}" data-reveal="1" style="position:relative;aspect-ratio:9/16;max-height:520px;background:#EDE5D9;border-radius:10px;overflow:hidden"><span style="position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:rgba(255,253,249,.85);display:flex;align-items:center;justify-content:center">▶</span><span style="position:absolute;left:14px;right:14px;bottom:14px;color:#372A25;font-size:14px;font-weight:600">{{ f }}</span></div></sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="gl" style="background:#FFFDF9;padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px)"><div style="max-width:1280px;margin:0 auto"><div data-reveal="1" style="display:flex;align-items:center;gap:12px;margin-bottom:28px"><span style="width:28px;height:1px;background:#C8754A"></span><span style="font-size:12px;letter-spacing:.22em;font-weight:600;color:#C8754A">GLOSSARY</span></div><h2 data-reveal="1" style="margin:0 0 40px;font-weight:700;font-size:clamp(30px,3.8vw,52px);line-height:1.2;letter-spacing:-.045em">{{ ex.gl.title }}</h2><div style="display:flex;flex-direction:column;border-top:2px solid #372A25"><sc-for list="{{ ex.gl.items }}" as="it" hint-placeholder-count="4"><div data-reveal="1" style="display:grid;grid-template-columns:minmax(140px,1fr) minmax(0,2fr) minmax(0,1fr);gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid #D8C7B2"><b style="font-size:18px;letter-spacing:-.02em">{{ it.k }}</b><span style="font-size:16px;line-height:1.6;color:#4F433D">{{ it.v }}</span><span style="font-size:14px;color:#A85A33;text-align:right">{{ it.n }}</span></div></sc-for></div><sc-if value="{{ ex.gl.note }}"><p style="margin:18px 0 0;font-size:13px;color:#817670">{{ ex.gl.note }}</p></sc-if></div></section>
+
+<section data-screen-label="ig" style="background:#F8F4EC;padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px)"><div style="max-width:1280px;margin:0 auto"><div data-reveal="1" style="display:flex;align-items:center;gap:12px;margin-bottom:28px"><span style="width:28px;height:1px;background:#C8754A"></span><span style="font-size:12px;letter-spacing:.22em;font-weight:600;color:#C8754A">INSTAGRAM</span></div><h2 data-reveal="1" style="margin:0 0 40px;font-weight:700;font-size:clamp(30px,3.8vw,52px);line-height:1.2;letter-spacing:-.045em">{{ ex.ig.title }}</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px"><sc-for list="{{ ex.ig.items }}" as="it" hint-placeholder-count="4"><div data-reveal="1" style="background:#FFFDF9;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;min-height:180px;box-sizing:border-box"><span style="font-size:15px;font-weight:700;color:#C8754A">{{ it.no }}</span><b style="font-size:21px;letter-spacing:-.03em;line-height:1.35">{{ it.k }}</b><span style="font-size:15px;line-height:1.7;color:#5E514B;margin-top:auto">{{ it.v }}</span></div></sc-for></div><sc-if value="{{ ex.ig.note }}"><p style="margin:18px 0 0;font-size:13px;color:#817670">{{ ex.ig.note }}</p></sc-if></div></section>
+
+<dc-import name="SoomFooter" lang="{{ lang }}" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: (window.localStorage && localStorage.getItem('soom-lang')) || 'ko' };
+  componentDidMount() { document.documentElement.lang = this.state.lang; }
+  renderVals() {
+    const EXD = {"ko":{"gl":{"title":"알아두면 쉬운 용어","items":[{"k":"헤어스트록","v":"한 올 한 올 결을 그려 넣는 눈썹 방식","n":"BROW"},{"k":"패더링","v":"결과 음영을 함께 표현하는 방식","n":"BROW"},{"k":"퍼스널 입술","v":"입술 본연의 색과 라인을 살리는 디자인","n":"LIP"},{"k":"리터치","v":"첫 시술 후 한 번 더 다듬어 완성하는 과정","n":"GUIDE"}]},"ig":{"title":"새 글과 영상은 인스타그램에서 먼저","items":[{"no":"IG","k":"@soom_pmu","v":"디자인 과정과 완성 사례를 가장 먼저 올립니다"},{"no":"DM","k":"DM 상담","v":"인스타그램 DM으로도 사진 상담이 가능합니다"}]}},"en":{"gl":{"title":"Terms made simple","items":[{"k":"Hair stroke","v":"Brows drawn stroke by stroke","n":"BROW"},{"k":"Feathering","v":"Strokes combined with soft shading","n":"BROW"},{"k":"Personal lip","v":"A design that brings out natural lip colour","n":"LIP"},{"k":"Touch-up","v":"A second session to complete the design","n":"GUIDE"}]},"ig":{"title":"New posts and films land on Instagram first","items":[{"no":"IG","k":"@soom_pmu","v":"Design process and results, first"},{"no":"DM","k":"DM consult","v":"Photo consultations by Instagram DM too"}]}}}; const ex = EXD[this.state.lang] || EXD.ko;
+    const HR = {"ko":{"eb":"BEAUTY NOTE","title":"시술 전에\n알아두면 좋은 이야기.","sub":"궁금한 것은 상담 전에 미리 확인해보세요.","items":[["01","이번 호 기사","눈썹 · 입술 · 가이드","#news"],["02","상담 전 체크","준비하면 좋은 4가지","#tips"],["03","SOOM FILM","디자인 과정 영상","#film"]]},"en":{"eb":"BEAUTY NOTE","title":"Good to know\nbefore your visit.","sub":"Check what you are curious about before your consultation.","items":[["01","This issue","Brows · lips · guides","#news"],["02","Before consult","4 things to prepare","#tips"],["03","SOOM FILM","Design process videos","#film"]]}}; const HX = HR[this.state.lang] || HR.ko;
+    const hero = { ...HX, label: this.state.lang === 'en' ? "Journal" : "뷰티 저널", items: HX.items.map(x => ({ no: x[0], k: x[1], v: x[2], href: x[3], target: /^https/.test(x[3]) ? '_blank' : '_self', arrow: x[3][0] === '#' ? '↓' : '→' })) };
+    const L = this.state.lang;
+    const T = {
+      ko: { sub: '시술 전에 알아두면 좋은 이야기', tipsK: '상담 전 체크',
+        arts: [{ cat: 'BROW', title: '헤어스트록 눈썹, 어떤 분께 맞을까요?', body: ['눈썹 숱이 적거나 빈 곳이 있는 분, 민낯에도 자연스러운 눈썹을 원하는 분께 잘 맞습니다.', '한 올 한 올 결을 그려 넣기 때문에 진한 눈썹이 부담스러운 분도 편하게 받으실 수 있어요.', '기존 눈썹의 방향과 길이를 먼저 확인하고, 그 흐름에 이어지도록 디자인합니다.'] },
+          { cat: 'GUIDE', title: '첫 방문 전 알아두면 좋은 것들', body: ['현재 눈썹이나 입술이 잘 보이는 자연광 사진을 카카오톡으로 먼저 보내주세요.', '기존 반영구가 남아 있다면 그 사진도 함께 보내주시면 상담이 수월해요.'] },
+          { cat: 'LIP', title: '입술 반영구, 색은 어떻게 정할까요?', body: ['입술 본연의 색과 피부 톤, 평소 즐겨 쓰는 립 컬러를 함께 보고 정합니다.', '너무 진하지 않게, 혈색이 도는 정도의 자연스러운 컬러를 추천드려요.'] }],
+        tips: [['자연광 사진 준비', '현재 상태가 잘 보이는 사진 한 장'], ['기존 시술 여부', '남아 있다면 사진도 함께'], ['원하는 분위기', '참고 사진이 있으면 더 좋아요'], ['일정 확인', '리터치까지 고려해 예약하기']],
+        films: ['디자인 드로잉 과정', '헤어스트록 완성', '퍼스널 입술', '숨뷰티 공간'] },
+      en: { sub: 'Good to know before your visit', tipsK: 'BEFORE CONSULT',
+        arts: [{ cat: 'BROW', title: 'Is a hair stroke brow right for you?', body: ['Ideal for sparse or patchy brows, or if you want natural brows without makeup.', 'Each stroke is drawn individually, so it never looks heavy.', 'We check your brow direction and length first, then design to continue that flow.'] },
+          { cat: 'GUIDE', title: 'Good to know before your first visit', body: ['Send a natural-light photo of your current brows or lips on Kakao first.', 'If you have old PMU, include that photo too.'] },
+          { cat: 'LIP', title: 'How do we choose a lip colour?', body: ['We consider your natural lip colour, skin tone and the shades you usually wear.', 'We recommend a soft, healthy tint rather than a heavy colour.'] }],
+        tips: [['Natural-light photo', 'One clear photo of your current state'], ['Previous work', 'Include photos if any remains'], ['Desired mood', 'Reference photos help'], ['Plan your dates', 'Allow for the touch-up']],
+        films: ['Design drawing', 'Hair stroke result', 'Personal lip', 'The studio'] }
+    };
+    const R = T[L] || T.ko;
+    return { ex, hero, t: R, lang: L, setLang: l => { localStorage.setItem('soom-lang', l); document.documentElement.lang = l; this.setState({ lang: l }); },
+      lead: R.arts[0], side: R.arts.slice(1),
+      tips: R.tips.map((p, i) => { const on = (this.state.tp ?? 0) === i; return { no: '0' + (i + 1), k: p[0], v: p[1], bg: on ? '#EED6C6' : '#FFFDF9', line: on ? '#EED6C6' : '#DFD5C9', numColor: on ? '#C97850' : '#302925', y: on ? '-8px' : '0px', arrow: on ? 1 : 0, enter: () => this.setState({ tp: i }) }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* 숨뷰티 모바일 재구성 (PC 는 그대로, 760px 미만만) */
+@media (max-width: 759.98px) {
+  /* ── 여백 ── */
+  section[style*="padding: clamp(90px, 10vw, 140px)"], section[style*="padding: clamp(110px, 13vw, 170px)"], section[style*="padding: clamp(130px, 15vw, 200px)"] { padding-top: 56px !important; padding-bottom: 56px !important; }
+  section[style*="padding: 180px clamp(20px, 4vw, 56px) 140px"] { padding-top: 116px !important; padding-bottom: 48px !important; }
+  section[style*="padding: 200px 20px 56px"] { padding-top: 116px !important; }
+
+  /* ── 제목 ── */
+  h2[style*="font-size: clamp(30px"], h2[style*="font-size: clamp(32px"], h2[style*="font-size: clamp(36px"], h2[style*="font-size: clamp(38px"], h2[style*="font-size: clamp(40px"] { font-size: 27px !important; line-height: 1.32 !important; }
+  h1[style*="font-size: clamp(64px"], h2[style*="font-size: clamp(64px"] { font-size: 48px !important; }
+
+  /* ── 메뉴 막대: 두께 2px, 간격 6px ── */
+  header button span[style*="height: 1px"] { height: 2px !important; }
+  header button span[style*="height: 1px"] + span[style*="height: 1px"] { margin-top: 6px !important; }
+
+  /* ── 옆으로 넘기는 카드 (사진·후기 묶음) ── */
+  section[data-screen-label="07 Process"] [style*="minmax(min(100%, 220px)"],
+  section[data-screen-label="08 Review"] [style*="minmax(min(100%, 340px)"],
+  section[data-screen-label="06 Studio"] [style*="minmax(min(100%, 260px)"],
+  section[data-screen-label="04 Film"] [style*="minmax(min(100%, 220px)"],
+  section#rv [style*="minmax(min(100%, 230px)"] {
+    display: flex !important; flex-wrap: nowrap !important; overflow-x: auto !important; overflow-y: hidden; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+    gap: 12px !important; margin-left: -20px !important; margin-right: -20px !important; padding: 0 20px 8px !important; scroll-padding: 0 20px; scrollbar-width: none;
+  }
+  section[data-screen-label="07 Process"] [style*="minmax(min(100%, 220px)"]::-webkit-scrollbar,
+  section[data-screen-label="08 Review"] [style*="minmax(min(100%, 340px)"]::-webkit-scrollbar,
+  section[data-screen-label="06 Studio"] [style*="minmax(min(100%, 260px)"]::-webkit-scrollbar,
+  section[data-screen-label="04 Film"] [style*="minmax(min(100%, 220px)"]::-webkit-scrollbar,
+  section#rv [style*="minmax(min(100%, 230px)"]::-webkit-scrollbar { display: none; }
+  section[data-screen-label="07 Process"] [style*="minmax(min(100%, 220px)"] > *,
+  section[data-screen-label="08 Review"] [style*="minmax(min(100%, 340px)"] > *,
+  section[data-screen-label="06 Studio"] [style*="minmax(min(100%, 260px)"] > *,
+  section#rv [style*="minmax(min(100%, 230px)"] > * { flex: 0 0 74% !important; width: 74% !important; min-width: 0 !important; scroll-snap-align: start; }
+  section[data-screen-label="04 Film"] [style*="minmax(min(100%, 220px)"] > * { flex: 0 0 58% !important; width: 58% !important; min-width: 0 !important; scroll-snap-align: start; }
+
+  /* ── 사진 갤러리: 2열 (칸 165px 이상) ── */
+  section[data-screen-label="06 Cases"] [style*="minmax(min(100%, 240px)"],
+  section[data-screen-label="02 Gallery"] [style*="minmax(min(100%, 290px)"] { grid-template-columns: 1fr 1fr !important; gap: 22px 10px !important; }
+
+  /* ── 번호 + 제목 + 설명 카드: 2열로 촘촘하게 ── */
+  section[data-screen-label="03 Why Soom"] [style*="minmax(min(100%, 180px)"],
+  section[data-screen-label="10 Aftercare"] [style*="minmax(min(100%, 220px)"],
+  section[data-screen-label="04 Principle"] [style*="minmax(min(100%, 240px)"],
+  section[data-screen-label="03 Tips"] [style*="minmax(min(100%, 220px)"],
+  section:not(#rv) [style*="minmax(min(100%, 230px)"] { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+  section:not(#rv) [style*="minmax(min(100%, 230px)"] > * { padding: 18px 14px !important; gap: 8px !important; }
+  section[data-screen-label="03 Why Soom"] [style*="minmax(min(100%, 180px)"] { gap: 22px 14px !important; }
+
+  /* ── 2단 글 → 1단 ── */
+  [style*="column-count: 2"] { column-count: 1 !important; }
+}

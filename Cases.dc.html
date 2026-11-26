@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>시술 사례 | 숨뷰티 SOOM BEAUTY</title>
+<meta name="description" content="보정 없이 실제 결과로 보여드리는 숨뷰티의 눈썹·입술 시술 사례입니다.">
+<link rel="canonical" href="https://soombeauty.pages.dev/cases">
+<meta property="og:type" content="website"><meta property="og:site_name" content="SOOM BEAUTY"><meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="시술 사례 | 숨뷰티 SOOM BEAUTY"><meta property="og:description" content="보정 없이 실제 결과로 보여드리는 숨뷰티의 눈썹·입술 시술 사례입니다.">
+<meta property="og:url" content="https://soombeauty.pages.dev/cases"><meta property="og:image" content="https://soombeauty.pages.dev/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#F7F3EC">
+<link rel="alternate" type="application/rss+xml" title="SOOM BEAUTY Journal" href="/rss.xml">
+
+
+<script src="/assets/sj-cms.js?v=1"></script>
+<link rel="stylesheet" href="/assets/soom-m.css?v=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F6F1EA"/><text x="50" y="62" text-anchor="middle" font-family="serif" font-size="34" fill="#D96B35">숨</text></svg></template>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFDF9;color:#372A25;font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all;overflow-wrap:break-word}
+a{color:#372A25;text-decoration:none}
+a:hover{color:#C8754A}
+@keyframes soomUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes soomFade{from{opacity:0}to{opacity:1}}
+</style>
+</helmet>
+<div style="position:relative;background:#FFFDF9;min-height:100vh;overflow:hidden">
+<dc-import name="SoomChrome" page="cases" lang="{{ lang }}" on-lang="{{ setLang }}" hint-size="100%,0px"></dc-import>
+
+<section data-screen-label="01 Hero" style="z-index:0;position:relative;overflow:hidden;background:#F5EFE7;padding:180px clamp(20px,4vw,56px) 140px;box-sizing:border-box">
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1"><div data-par="40" style="position:absolute;left:15%;top:-10%;width:70%;height:120%;background:url(assets/hero-shadow.jpg) center/cover;opacity:.14;filter:blur(8px);-webkit-mask-image:radial-gradient(closest-side,#000 40%,transparent 100%);mask-image:radial-gradient(closest-side,#000 40%,transparent 100%)"></div></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;display:flex;flex-direction:column;animation:soomUp 1.2s ease .2s both">
+    <span style="font-size:12px;letter-spacing:.14em;color:#817670"><span style="color:#D96B35">03</span> / 05</span>
+    <h1 style="margin:22px 0 0;font-weight:300;font-size:clamp(64px,9vw,120px);line-height:1;letter-spacing:-.04em">CASES</h1>
+    <b style="margin-top:30px;font-size:17px;font-weight:600">{{ hero.label }}</b>
+    <p style="margin:12px 0 0;max-width:440px;font-size:15px;line-height:1.75;color:#5E514B">{{ hero.sub }}</p>
+  </div>
+</section>
+
+<div style="position:sticky;top:76px;z-index:20;background:rgba(255,253,249,.94);backdrop-filter:blur(10px);padding:0 clamp(20px,4vw,56px)">
+  <div style="max-width:1280px;margin:0 auto;padding:12px 0;display:flex;gap:6px;overflow-x:auto;border-bottom:1px solid #372A25">
+    <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4"><button onClick="{{ f.onClick }}" style="height:40px;padding:0 16px;border:1px solid #372A25;background:{{ f.bg }};color:{{ f.color }};font:inherit;font-size:13px;font-weight:600;letter-spacing:.06em;cursor:pointer;white-space:nowrap">{{ f.label }}</button></sc-for>
+  </div>
+</div>
+
+<section id="gallery" data-screen-label="02 Gallery" style="padding:40px clamp(20px,4vw,56px) clamp(48px,6vw,80px)">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:40px 24px">
+    <sc-for list="{{ cases }}" as="c" hint-placeholder-count="6">
+      <button onClick="{{ c.open }}" style="display:flex;flex-direction:column;gap:0;padding:0;border:0;background:none;text-align:left;font:inherit;color:#372A25;cursor:pointer">
+        <div data-slot-id="case-{{ c.i }}" style="position:relative;aspect-ratio:4/5;width:100%;background:#EDE5D9"><span style="position:absolute;left:12px;bottom:10px;font-size:10px;color:rgba(55,42,37,.42)">실제 시술 사진</span><span style="position:absolute;left:0;top:14px;background:#372A25;color:#FFFDF9;font-size:11px;font-weight:700;letter-spacing:.12em;padding:6px 10px">{{ c.no }}</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px;padding:14px 0 0;border-top:2px solid #372A25;margin-top:12px"><b style="font-size:12px;letter-spacing:.16em;color:#C8754A">{{ c.prog }}</b><span style="font-size:16px;font-weight:600;line-height:1.45">{{ c.note }}</span></div>
+      </button>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="03 Note" style="position:relative;z-index:0;background:#F5EFE7;padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px)"><div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1"><div data-par="40" style="position:absolute;left:15%;top:-10%;width:70%;height:120%;background:url(assets/hero-shadow.jpg) center/cover;opacity:.14;filter:blur(8px);-webkit-mask-image:radial-gradient(closest-side,#000 40%,transparent 100%);mask-image:radial-gradient(closest-side,#000 40%,transparent 100%)"></div></div>
+  <div style="max-width:960px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px">
+    <span data-reveal="1" style="font-size:96px;line-height:.5;color:#C8754A;font-weight:800">“</span>
+    <h2 data-reveal="1" style="margin:0;font-weight:700;font-size:clamp(28px,3.6vw,48px);line-height:1.35;letter-spacing:-.04em;color:#372A25;white-space:pre-line">{{ t.noteTitle }}</h2>
+    <span data-reveal="1" style="font-size:13px;letter-spacing:.2em;color:#5E514B">— SOOM DESIGN NOTE</span>
+  </div>
+</section>
+
+<section data-screen-label="dp" style="background:#FFFDF9;padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px)"><div style="max-width:1280px;margin:0 auto"><div data-reveal="1" style="display:flex;align-items:center;gap:12px;margin-bottom:28px"><span style="width:28px;height:1px;background:#C8754A"></span><span style="font-size:12px;letter-spacing:.22em;font-weight:600;color:#C8754A">DESIGN POINT</span></div><h2 data-reveal="1" style="margin:0 0 40px;font-weight:700;font-size:clamp(30px,3.8vw,52px);line-height:1.2;letter-spacing:-.045em">{{ ex.dp.title }}</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px"><sc-for list="{{ ex.dp.items }}" as="it" hint-placeholder-count="4"><div data-reveal="1" style="background:#F8F4EC;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;min-height:180px;box-sizing:border-box"><span style="font-size:15px;font-weight:700;color:#C8754A">{{ it.no }}</span><b style="font-size:21px;letter-spacing:-.03em;line-height:1.35">{{ it.k }}</b><span style="font-size:15px;line-height:1.7;color:#5E514B;margin-top:auto">{{ it.v }}</span></div></sc-for></div><sc-if value="{{ ex.dp.note }}"><p style="margin:18px 0 0;font-size:13px;color:#817670">{{ ex.dp.note }}</p></sc-if></div></section>
+
+<section data-screen-label="rv" style="background:#F8F4EC;padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px)"><div style="max-width:1280px;margin:0 auto"><div data-reveal="1" style="display:flex;align-items:center;gap:12px;margin-bottom:28px"><span style="width:28px;height:1px;background:#C8754A"></span><span style="font-size:12px;letter-spacing:.22em;font-weight:600;color:#C8754A">REVIEW</span></div><h2 data-reveal="1" style="margin:0 0 40px;font-weight:700;font-size:clamp(30px,3.8vw,52px);line-height:1.2;letter-spacing:-.045em">{{ ex.rv.title }}</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px"><sc-for list="{{ ex.rv.items }}" as="it" hint-placeholder-count="4"><div data-reveal="1" style="background:#FFFDF9;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;min-height:180px;box-sizing:border-box"><span style="font-size:15px;font-weight:700;color:#C8754A">{{ it.no }}</span><b style="font-size:21px;letter-spacing:-.03em;line-height:1.35">{{ it.k }}</b><span style="font-size:15px;line-height:1.7;color:#5E514B;margin-top:auto">{{ it.v }}</span></div></sc-for></div><sc-if value="{{ ex.rv.note }}"><p style="margin:18px 0 0;font-size:13px;color:#817670">{{ ex.rv.note }}</p></sc-if></div></section>
+
+<section data-screen-label="04 CTA" style="padding:clamp(90px,10vw,140px) clamp(20px,4vw,56px);text-align:center">
+  <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:22px"><h2 data-reveal="1" style="margin:0;font-weight:700;font-size:clamp(28px,3.4vw,46px);line-height:1.3;letter-spacing:-.04em;white-space:pre-line">{{ t.cta }}</h2><a data-reveal="1" href="#kakao" style="height:54px;padding:0 28px;border-radius:999px;background:#372A25;color:#FFFDF9;display:inline-flex;align-items:center;font-size:15px;font-weight:600" style-hover="background:#D96B35;color:#FFFDF9">{{ t.ctaA }}</a></div>
+</section>
+
+<dc-import name="SoomFooter" lang="{{ lang }}" hint-size="100%,360px"></dc-import>
+
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:80;background:rgba(246,241,234,.98);display:flex;align-items:center;justify-content:center;padding:clamp(20px,4vw,56px);box-sizing:border-box;animation:soomFade .3s ease both">
+    <button onClick="{{ close }}" aria-label="Close" style="position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:1px solid #372A25;background:#FFFDF9;font-size:22px;color:#372A25;cursor:pointer">×</button>
+    <div style="width:100%;max-width:1040px;max-height:100%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(24px,4vw,56px);align-items:center">
+      <div data-slot-id="case-{{ sel.i }}" style="aspect-ratio:4/5;max-width:460px;width:100%;justify-self:center;background:#EDE5D9"></div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span style="align-self:flex-start;background:#372A25;color:#FFFDF9;font-size:12px;font-weight:700;letter-spacing:.12em;padding:6px 10px">{{ sel.no }}</span>
+        <b style="font-size:clamp(24px,2.6vw,34px);letter-spacing:-.03em">{{ sel.prog }}</b>
+        <div style="display:flex;flex-direction:column;border-top:2px solid #372A25"><sc-for list="{{ t.lbRows }}" as="r" hint-placeholder-count="3"><div style="display:grid;grid-template-columns:110px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid #D8C7B2"><span style="font-size:12px;letter-spacing:.12em;color:#A85A33;font-weight:700">{{ r.k }}</span><span style="font-size:15px">{{ r.v }}</span></div></sc-for></div>
+        <p style="margin:0;font-size:13px;color:#817670">{{ t.lbNote }}</p>
+      </div>
+    </div>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: (window.localStorage && localStorage.getItem('soom-lang')) || 'ko', filter: 'ALL', sel: -1 };
+  componentDidMount() { document.documentElement.lang = this.state.lang; this.k = e => { if (e.key === 'Escape') this.setState({ sel: -1 }); }; addEventListener('keydown', this.k); }
+  componentWillUnmount() { removeEventListener('keydown', this.k); }
+  renderVals() {
+    const EXD = {"ko":{"dp":{"title":"모든 사례에서 이것을 확인합니다","items":[{"no":"01","k":"얼굴 비율","v":"눈 · 코 · 입 사이 균형"},{"no":"02","k":"기존 결과 방향","v":"원래 눈썹이 자라는 흐름"},{"no":"03","k":"피부 타입","v":"지성 · 건성에 따른 표현 차이"},{"no":"04","k":"원하는 분위기","v":"또렷하게, 혹은 자연스럽게"}]},"rv":{"title":"받아보신 분들의 이야기","items":[{"no":"★★★★★","k":"헤어스트록 · 김○○","v":"네이버 실제 후기 내용이 들어갑니다."},{"no":"★★★★★","k":"퍼스널 입술 · 이○○","v":"네이버 실제 후기 내용이 들어갑니다."},{"no":"★★★★★","k":"패더링 · 박○○","v":"네이버 실제 후기 내용이 들어갑니다."}]}},"en":{"dp":{"title":"What we check in every case","items":[{"no":"01","k":"Proportion","v":"Balance between eyes, nose and lips"},{"no":"02","k":"Hair direction","v":"How your brows naturally grow"},{"no":"03","k":"Skin type","v":"How oily or dry skin holds pigment"},{"no":"04","k":"Desired mood","v":"Defined, or soft and natural"}]},"rv":{"title":"In our clients’ words","items":[{"no":"★★★★★","k":"Hair stroke · K.","v":"A verified Naver review goes here."},{"no":"★★★★★","k":"Personal lip · L.","v":"A verified Naver review goes here."},{"no":"★★★★★","k":"Feathering · P.","v":"A verified Naver review goes here."}]}}}; const ex = EXD[this.state.lang] || EXD.ko;
+    const HR = {"ko":{"eb":"CASES","title":"보정 없이,\n실제 결과로 보여드립니다.","sub":"한 사람의 얼굴에 맞춘 디자인의 기록.","items":[["01","헤어스트록","자연결 채움","#gallery"],["02","패더링","결 + 음영","#gallery"],["03","퍼스널 입술","자연스러운 혈색","#gallery"]]},"en":{"eb":"CASES","title":"Real results,\nwithout retouching.","sub":"A record of designs made for one face at a time.","items":[["01","Hair stroke","Natural fill","#gallery"],["02","Feathering","Strokes + shading","#gallery"],["03","Personal lip","Natural tint","#gallery"]]}}; const HX = HR[this.state.lang] || HR.ko;
+    const hero = { ...HX, label: this.state.lang === 'en' ? "Cases" : "작업 사례", items: HX.items.map(x => ({ no: x[0], k: x[1], v: x[2], href: x[3], target: /^https/.test(x[3]) ? '_blank' : '_self', arrow: x[3][0] === '#' ? '↓' : '→' })) };
+    const L = this.state.lang, S = this.state;
+    const T = {
+      ko: { heroSub: '보정 없이, 실제 결과로 보여드립니다.', cnt: '건의 사례', noteTitle: '사진 한 장보다,\n얼굴 전체와의 조화를 봅니다.', cta: '나에게 맞는 디자인이 궁금하다면\n사진 한 장만 보내주세요.', ctaA: '카톡으로 사진 보내기',
+        notes: ['숱이 적은 눈썹 → 자연결 채움', '짝짝이 눈썹 → 좌우 균형', '흐린 입술 → 자연스러운 혈색', '진한 눈썹 고민 → 가볍게', '빈 곳이 많은 꼬리 → 결 연결', '흐린 라인 → 또렷한 입술'],
+        lbRows: [{ k: '고민', v: '[고객 고민 입력]' }, { k: '디자인', v: '[디자인 노트 입력]' }, { k: 'BEFORE/AFTER', v: '[실제 자료가 있을 때만]' }], lbNote: '결과는 개인의 피부 상태에 따라 차이가 있을 수 있습니다.' },
+      en: { heroSub: 'Real results, without retouching.', cnt: ' cases', noteTitle: 'We look at the harmony of the whole face,\nnot a single photo.', cta: 'Curious what suits you?\nJust send us one photo.', ctaA: 'Send a photo on Kakao',
+        notes: ['Sparse brows → natural fill', 'Uneven brows → balanced', 'Pale lips → natural tint', 'Bold brows → lighter look', 'Patchy tail → connected strokes', 'Faint line → defined lips'],
+        lbRows: [{ k: 'CONCERN', v: '[Client concern]' }, { k: 'DESIGN', v: '[Design note]' }, { k: 'BEFORE/AFTER', v: '[Only if real]' }], lbNote: 'Results may vary with skin condition.' }
+    };
+    const R = T[L] || T.ko, P = ['HAIR STROKE', 'FEATHERING', 'PERSONAL LIP'], ks = [0, 1, 2, 0, 0, 2, 1, 0, 2];
+    const all = ks.map((k, i) => ({ i, k, no: 'CASE ' + String(i + 1).padStart(2, '0'), prog: P[k], note: R.notes[i % 6] }));
+    const m = { ALL: -1, 'HAIR STROKE': 0, FEATHERING: 1, LIP: 2 };
+    const list = all.filter(c => m[S.filter] < 0 || c.k === m[S.filter]);
+    return { ex, hero, t: R, lang: L, setLang: l => { localStorage.setItem('soom-lang', l); document.documentElement.lang = l; this.setState({ lang: l }); },
+      count: String(list.length).padStart(2, '0') + R.cnt,
+      filters: Object.keys(m).map(l => ({ label: l, bg: S.filter === l ? '#372A25' : 'transparent', color: S.filter === l ? '#FFFDF9' : '#372A25', onClick: () => this.setState({ filter: l }) })),
+      cases: list.map(c => ({ ...c, open: () => this.setState({ sel: c.i }) })),
+      lbOpen: S.sel >= 0, sel: all[S.sel] || { no: '', prog: '' }, close: () => this.setState({ sel: -1 })
+    };
+  }
+}
+</script>
+</body>
+</html>

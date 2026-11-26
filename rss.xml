@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>SOOM BEAUTY Journal · 숨뷰티 뷰티 노트</title>
+  <link>https://soombeauty.pages.dev/journal</link>
+  <atom:link href="https://soombeauty.pages.dev/rss.xml" rel="self" type="application/rss+xml"/>
+  <description>시술 전에 알아두면 좋은 눈썹·입술 이야기</description>
+  <language>ko-kr</language>
+  <lastBuildDate>Thu, 26 Nov 2026 00:00:00 GMT</lastBuildDate>
+  <item>
+    <title>헤어스트록 눈썹, 어떤 분께 맞을까요?</title>
+    <link>https://soombeauty.pages.dev/journal#note-1</link>
+    <guid isPermaLink="false">soombeauty-journal-1</guid>
+    <category>BROW</category>
+    <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+    <description>눈썹 숱이 적거나 빈 곳이 있는 분, 민낯에도 자연스러운 눈썹을 원하는 분께 잘 맞습니다.</description>
+  </item>
+  <item>
+    <title>첫 방문 전 알아두면 좋은 것들</title>
+    <link>https://soombeauty.pages.dev/journal#note-2</link>
+    <guid isPermaLink="false">soombeauty-journal-2</guid>
+    <category>GUIDE</category>
+    <pubDate>Mon, 12 Oct 2026 00:00:00 GMT</pubDate>
+    <description>현재 눈썹이나 입술이 잘 보이는 자연광 사진을 카카오톡으로 먼저 보내주세요.</description>
+  </item>
+  <item>
+    <title>입술 반영구, 색은 어떻게 정할까요?</title>
+    <link>https://soombeauty.pages.dev/journal#note-3</link>
+    <guid isPermaLink="false">soombeauty-journal-3</guid>
+    <category>LIP</category>
+    <pubDate>Sat, 03 Oct 2026 00:00:00 GMT</pubDate>
+    <description>입술 본연의 색과 피부 톤, 평소 즐겨 쓰는 립 컬러를 함께 보고 정합니다.</description>
+  </item>
+</channel>
+</rss>
