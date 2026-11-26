@@ -16,6 +16,7 @@
 
 
 <script src="/assets/sj-cms.js?v=1"></script>
+<script src="/assets/soom-i18n.js?v=1"></script>
 <link rel="stylesheet" href="/assets/soom-m.css?v=1">
 <script src="./support.js"></script>
 </head>
@@ -91,7 +92,7 @@ class Component extends DCLogic {
   state = { lang: (window.localStorage && localStorage.getItem('soom-lang')) || 'ko', faq: 0 };
   componentDidMount() { document.documentElement.lang = this.state.lang; }
   renderVals() {
-    const EXD = {"ko":{"bk":{"title":"예약은 이렇게 진행돼요","items":[{"no":"01","k":"카톡으로 사진 보내기","v":"현재 상태가 보이는 사진 한 장"},{"no":"02","k":"상담 · 방향 안내","v":"어울리는 디자인 방향을 먼저 안내"},{"no":"03","k":"날짜 예약","v":"네이버 예약 또는 카톡으로 확정"},{"no":"04","k":"방문 · 시술","v":"디자인 확인 후 시술 진행"}]},"rt":{"title":"KTX 광명역에서 오시는 길","items":[{"k":"01","v":"KTX 광명역 하차 후 출구 확인","n":"출구 번호 입력"},{"k":"02","v":"도보 경로 입력","n":"약 N분"},{"k":"03","v":"경기 광명시 일직로 28 1동 2층 219호","n":"도착"}]}},"en":{"bk":{"title":"How booking works","items":[{"no":"01","k":"Send a photo on Kakao","v":"One photo of your current state"},{"no":"02","k":"Consultation","v":"We suggest a direction first"},{"no":"03","k":"Book a date","v":"Confirm on Naver or Kakao"},{"no":"04","k":"Visit","v":"Procedure after design approval"}]},"rt":{"title":"From KTX Gwangmyeong Station","items":[{"k":"01","v":"Get off at KTX Gwangmyeong; check the exit","n":"Exit TBC"},{"k":"02","v":"Walking route TBC","n":"About N min"},{"k":"03","v":"Unit 219, 2F, Bldg 1, 28 Iljik-ro","n":"Arrive"}]}}}; const ex = EXD[this.state.lang] || EXD.ko;
+    const EXD = {"ko":{"bk":{"title":"예약은 이렇게 진행돼요","items":[{"no":"01","k":"카톡으로 사진 보내기","v":"현재 상태가 보이는 사진 한 장"},{"no":"02","k":"상담 · 방향 안내","v":"어울리는 디자인 방향을 먼저 안내"},{"no":"03","k":"날짜 예약","v":"네이버 예약 또는 카톡으로 확정"},{"no":"04","k":"방문 · 시술","v":"디자인 확인 후 시술 진행"}]},"rt":{"title":"KTX 광명역에서 오시는 길","items":[{"k":"01","v":"광명역 하차 후 1번 출구로 나오기","n":"1번 출구"},{"k":"02","v":"광명코스트코 건너편 광명트리플타워 1동으로 도보 이동","n":"약 600m"},{"k":"03","v":"경기 광명시 일직로 28 1동 2층 219호","n":"도착"}]}},"en":{"bk":{"title":"How booking works","items":[{"no":"01","k":"Send a photo on Kakao","v":"One photo of your current state"},{"no":"02","k":"Consultation","v":"We suggest a direction first"},{"no":"03","k":"Book a date","v":"Confirm on Naver or Kakao"},{"no":"04","k":"Visit","v":"Procedure after design approval"}]},"rt":{"title":"From KTX Gwangmyeong Station","items":[{"k":"01","v":"Leave Gwangmyeong Station by Exit 1","n":"Exit 1"},{"k":"02","v":"Walk to Gwangmyeong Triple Tower Bldg 1, across from Costco Gwangmyeong","n":"About 600 m"},{"k":"03","v":"Unit 219, 2F, Bldg 1, 28 Iljik-ro","n":"Arrive"}]}}}; const ex = EXD[this.state.lang] || EXD.ko;
     const HR = {"ko":{"eb":"CONTACT","title":"사진 한 장으로\n시작하세요.","sub":"어떤 디자인이 어울릴지 몰라도 괜찮아요. 편하게 문의해주세요.","items":[["01","카톡 상담","사진 보내고 편하게 문의","#kakao"],["02","네이버 예약","원하는 날짜 바로 예약","https://map.naver.com/p/entry/place/2032343522"],["03","전화 문의","010-5005-3809","tel:01050053809"]]},"en":{"eb":"CONTACT","title":"Start with\none photo.","sub":"It is fine not to know what suits you. Just ask.","items":[["01","Kakao","Send a photo and ask","#kakao"],["02","Naver booking","Book your date","https://map.naver.com/p/entry/place/2032343522"],["03","Call","+82 10-5005-3809","tel:01050053809"]]}}; const HX = HR[this.state.lang] || HR.ko;
     const hero = { ...HX, label: this.state.lang === 'en' ? "Contact" : "상담 · 예약", items: HX.items.map(x => ({ no: x[0], k: x[1], v: x[2], href: x[3], target: /^https/.test(x[3]) ? '_blank' : '_self', arrow: x[3][0] === '#' ? '↓' : '→' })) };
     const L = this.state.lang, S = this.state;
@@ -100,16 +101,16 @@ class Component extends DCLogic {
         m: [['카톡 상담', '사진 보내고 편하게 문의'], ['네이버 예약', '원하는 날짜 바로 예약'], ['전화 문의', '010-5005-3809']],
         chkTitle: '첫 방문 전,\n이것만 챙겨주세요',
         checks: ['현재 눈썹 · 입술 자연광 사진', '기존 반영구가 있다면 그 사진', '원하는 분위기의 참고 사진', '리터치까지 고려한 일정'],
-        info: [{ k: '주소', v: '경기 광명시 일직로 28 1동 2층 219호' }, { k: '교통', v: 'KTX 광명역 도보 이동 가능' }, { k: '운영시간', v: '[확인 후 입력]' }, { k: '주차', v: '[확인 후 입력]' }, { k: '전화', v: '010-5005-3809' }],
+        info: [{ k: '주소', v: '경기 광명시 일직로 28 1동 2층 219호' }, { k: '교통', v: 'KTX 광명역 도보 이동 가능' }, { k: '운영시간', v: '매일 10:00 - 20:00' }, { k: '주차', v: '건물 주차장 무료 이용' }, { k: '전화', v: '010-5005-3809' }],
         faqTitle: '자주 묻는 질문',
-        faq: [['상담만 먼저 받을 수 있나요?', '네, 카카오톡으로 사진을 보내주시면 먼저 안내드립니다.'], ['예약 변경은 어떻게 하나요?', '[확인 후 입력]'], ['외국어 상담이 가능한가요?', '[확인 후 입력]'], ['주차가 가능한가요?', '[확인 후 입력]']] },
+        faq: [['상담만 먼저 받을 수 있나요?', '네, 카카오톡으로 사진을 보내주시면 먼저 안내드립니다.'], ['예약 변경은 어떻게 하나요?', '네이버 예약 또는 카카오톡으로 편하게 말씀해주세요.'], ['외국어 상담이 가능한가요?', '카카오톡으로 먼저 문의해 주시면 안내드립니다.'], ['주차가 가능한가요?', '네, 건물 주차장을 무료로 이용하실 수 있습니다.']] },
       en: { heroSub: 'It is fine not to know what suits you.\nStart with one photo.',
         m: [['Kakao', 'Send a photo and ask'], ['Naver booking', 'Book your date'], ['Call', '+82 10-5005-3809']],
         chkTitle: 'Before your first visit,\nbring just these',
         checks: ['Natural-light photo of brows/lips', 'Photo of any previous PMU', 'Reference photos of your desired look', 'Dates that allow for a touch-up'],
-        info: [{ k: 'Address', v: 'Unit 219, 2F, Bldg 1, 28 Iljik-ro, Gwangmyeong-si' }, { k: 'Access', v: 'Walk from KTX Gwangmyeong' }, { k: 'Hours', v: '[TBC]' }, { k: 'Parking', v: '[TBC]' }, { k: 'Phone', v: '+82 10-5005-3809' }],
+        info: [{ k: 'Address', v: 'Unit 219, 2F, Bldg 1, 28 Iljik-ro, Gwangmyeong-si' }, { k: 'Access', v: 'Walk from KTX Gwangmyeong' }, { k: 'Hours', v: 'Daily 10:00 - 20:00' }, { k: 'Parking', v: 'Free parking in the building' }, { k: 'Phone', v: '+82 10-5005-3809' }],
         faqTitle: 'FAQ',
-        faq: [['Can I consult first?', 'Yes, send a photo on Kakao and we will advise.'], ['How do I change a booking?', '[TBC]'], ['Do you consult in other languages?', '[TBC]'], ['Is parking available?', '[TBC]']] }
+        faq: [['Can I consult first?', 'Yes, send a photo on Kakao and we will advise.'], ['How do I change a booking?', 'Just let us know via Naver Booking or Kakao.'], ['Do you consult in other languages?', 'Please message us on Kakao first and we will help.'], ['Is parking available?', 'Yes, parking in the building is free.']] }
     };
     const R = T[L] || T.ko;
     const M = [['KAKAO', '#kakao', '_self', '#FEE500', '#191919', 'rgba(25,25,25,.2)'], ['NAVER', 'https://map.naver.com/p/entry/place/2032343522', '_blank', '#D96B35', '#FFFDF9', 'rgba(255,253,249,.4)'], ['CALL', 'tel:01050053809', '_self', '#372A25', '#FFFDF9', 'rgba(255,253,249,.3)']];

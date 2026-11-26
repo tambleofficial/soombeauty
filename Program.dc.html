@@ -16,6 +16,7 @@
 
 
 <script src="/assets/sj-cms.js?v=1"></script>
+<script src="/assets/soom-i18n.js?v=1"></script>
 <link rel="stylesheet" href="/assets/soom-m.css?v=1">
 <script src="./support.js"></script>
 </head>
@@ -112,7 +113,7 @@ class Component extends DCLogic {
   state = { lang: (window.localStorage && localStorage.getItem('soom-lang')) || 'ko', faq: 0 };
   componentDidMount() { document.documentElement.lang = this.state.lang; }
   renderVals() {
-    const EXD = {"ko":{"pr":{"title":"가격 안내","items":[{"k":"헤어스트록 눈썹","v":"가격 입력","n":"리터치 포함 여부 확인"},{"k":"패더링 눈썹","v":"가격 입력","n":"리터치 포함 여부 확인"},{"k":"퍼스널 입술","v":"가격 입력","n":"리터치 포함 여부 확인"}],"note":"정확한 비용은 현재 상태 확인 후 상담에서 안내드립니다."},"ac":{"title":"시술 후, 이렇게 관리하세요","items":[{"no":"D-DAY","k":"물 닿지 않게","v":"시술 당일은 시술 부위에 물이 닿지 않게 해주세요"},{"no":"D+1~7","k":"각질은 그대로","v":"각질은 억지로 떼지 말고 자연스럽게 떨어지게"},{"no":"D+7","k":"사우나 · 수영 피하기","v":"회복 기간 동안 땀과 열을 피해주세요"},{"no":"RETOUCH","k":"리터치로 완성","v":"한 번 더 다듬어 디자인을 완성합니다"}],"note":"개인 상태에 따라 관리 안내가 달라질 수 있습니다."}},"en":{"pr":{"title":"Pricing","items":[{"k":"Hair Stroke Brow","v":"Price TBC","n":"Touch-up included? TBC"},{"k":"Feathering Brow","v":"Price TBC","n":"Touch-up included? TBC"},{"k":"Personal Lip","v":"Price TBC","n":"Touch-up included? TBC"}],"note":"Exact pricing is given at consultation after checking your current state."},"ac":{"title":"After your procedure","items":[{"no":"D-DAY","k":"Keep it dry","v":"Keep the area dry on the day"},{"no":"D+1~7","k":"Let it flake","v":"Do not pick; let flakes fall naturally"},{"no":"D+7","k":"Avoid heat","v":"Skip sauna and swimming while healing"},{"no":"RETOUCH","k":"Touch-up","v":"A second session completes the design"}],"note":"Aftercare may vary with your condition."}}}; const ex = EXD[this.state.lang] || EXD.ko;
+    const EXD = {"ko":{"pr":{"title":"가격 안내","items":[{"k":"헤어스트록 눈썹","v":"300,000원","n":"네이버 플레이스 가격 기준"},{"k":"패더링 눈썹","v":"상담 후 안내","n":"현재 상태 확인 후 안내"},{"k":"퍼스널 입술","v":"300,000원","n":"여성 입술 기준 · 네이버 플레이스"}],"note":"정확한 비용은 현재 상태 확인 후 상담에서 안내드립니다."},"ac":{"title":"시술 후, 이렇게 관리하세요","items":[{"no":"D-DAY","k":"물 닿지 않게","v":"시술 당일은 시술 부위에 물이 닿지 않게 해주세요"},{"no":"D+1~7","k":"각질은 그대로","v":"각질은 억지로 떼지 말고 자연스럽게 떨어지게"},{"no":"D+7","k":"사우나 · 수영 피하기","v":"회복 기간 동안 땀과 열을 피해주세요"},{"no":"RETOUCH","k":"리터치로 완성","v":"한 번 더 다듬어 디자인을 완성합니다"}],"note":"개인 상태에 따라 관리 안내가 달라질 수 있습니다."}},"en":{"pr":{"title":"Pricing","items":[{"k":"Hair Stroke Brow","v":"KRW 300,000","n":"Per Naver Place listing"},{"k":"Feathering Brow","v":"Quoted at consultation","n":"Per Naver Place listing"},{"k":"Personal Lip","v":"KRW 300,000","n":"Per Naver Place listing"}],"note":"Exact pricing is given at consultation after checking your current state."},"ac":{"title":"After your procedure","items":[{"no":"D-DAY","k":"Keep it dry","v":"Keep the area dry on the day"},{"no":"D+1~7","k":"Let it flake","v":"Do not pick; let flakes fall naturally"},{"no":"D+7","k":"Avoid heat","v":"Skip sauna and swimming while healing"},{"no":"RETOUCH","k":"Touch-up","v":"A second session completes the design"}],"note":"Aftercare may vary with your condition."}}}; const ex = EXD[this.state.lang] || EXD.ko;
     const HR = {"ko":{"eb":"PROGRAM","title":"같은 얼굴에\n같은 디자인은 없습니다.","sub":"세 가지 프로그램 중 나에게 맞는 것을 찾아보세요.","items":[["01","헤어스트록 눈썹","민낯에도 원래 내 눈썹처럼","#hair-stroke"],["02","패더링 눈썹","결 + 음영으로 정돈된 눈썹","#feathering"],["03","퍼스널 입술","립 없이도 생기 있는 입술","#lip"]]},"en":{"eb":"PROGRAM","title":"No two faces\nshare one design.","sub":"Find the one of our three programs that suits you.","items":[["01","Hair Stroke Brow","Like your own, even bare-faced","#hair-stroke"],["02","Feathering Brow","Strokes + shading, neatly defined","#feathering"],["03","Personal Lip","Fresh colour without lipstick","#lip"]]}}; const HX = HR[this.state.lang] || HR.ko;
     const hero = { ...HX, label: this.state.lang === 'en' ? "Programs" : "프로그램", items: HX.items.map(x => ({ no: x[0], k: x[1], v: x[2], href: x[3], target: /^https/.test(x[3]) ? '_blank' : '_self', arrow: x[3][0] === '#' ? '↓' : '→' })) };
     const L = this.state.lang, S = this.state;
@@ -123,7 +124,7 @@ class Component extends DCLogic {
         caps: ['한 올 한 올 결을 그려 넣는 방식', '결과 음영을 함께 표현하는 방식', '입술 본연의 색과 라인을 살리는 방식'],
         who: [['숱이 적거나 빈 곳이 있어요', '진한 눈썹은 부담스러워요', '자연스러운 결을 원해요'], ['매일 눈썹 그리기 귀찮아요', '좌우가 짝짝이예요', '또렷한 느낌을 원해요'], ['입술 색이 흐리거나 칙칙해요', '입술 라인이 흐려요', '자연스러운 혈색을 원해요']],
         specK: ['DESIGN POINT', '소요 시간', '리터치', '유지 기간'],
-        specV: [['기존 눈썹의 방향 · 길이 · 결', '[N]시간 [확인]', '[N]주 후 [확인]', '개인차 있음 [확인]'], ['빈 곳의 밀도와 전체 균형', '[N]시간 [확인]', '[N]주 후 [확인]', '개인차 있음 [확인]'], ['입술 본연의 색 · 라인 · 톤', '[N]시간 [확인]', '[N]주 후 [확인]', '개인차 있음 [확인]']],
+        specV: [['기존 눈썹의 방향 · 길이 · 결', '상담 시 안내', '상담 시 안내', '피부 타입 · 관리에 따라 개인차'], ['빈 곳의 밀도와 전체 균형', '상담 시 안내', '상담 시 안내', '피부 타입 · 관리에 따라 개인차'], ['입술 본연의 색 · 라인 · 톤', '상담 시 안내', '상담 시 안내', '피부 타입 · 관리에 따라 개인차']],
         forWho: '이런 분이라면 체크!',
         cmpTitle: '한눈에 비교해보세요', cols: ['헤어스트록', '패더링', '퍼스널 입술'],
         rowK: ['민낯에도 자연스럽게', '또렷하고 정돈된 느낌', '숱이 적은 눈썹', '흐린 입술 색', '데일리 메이크업 시간 단축'],
@@ -131,7 +132,7 @@ class Component extends DCLogic {
         procTitle: '어떤 프로그램이든, 같은 4단계',
         steps: [{ no: '01', k: '카톡 상담', v: '사진 한 장 보내기' }, { no: '02', k: '디자인', v: '먼저 그려보고 확인' }, { no: '03', k: '시술', v: '확정된 디자인으로' }, { no: '04', k: '리터치', v: '한 번 더 다듬어 완성' }],
         faqTitle: '자주 묻는 질문',
-        faq: [['상담만 먼저 받을 수 있나요?', '네, 카카오톡으로 사진을 보내주시면 먼저 안내드립니다.'], ['기존 반영구가 남아 있어도 되나요?', '현재 상태를 사진으로 먼저 확인한 뒤 안내드립니다.'], ['아프지 않나요?', '[확인 후 입력] 통증은 개인차가 있습니다.'], ['리터치는 꼭 받아야 하나요?', '[확인 후 입력]'], ['유지 기간은 어느 정도인가요?', '[확인 후 입력] 피부 타입과 관리에 따라 달라집니다.']],
+        faq: [['상담만 먼저 받을 수 있나요?', '네, 카카오톡으로 사진을 보내주시면 먼저 안내드립니다.'], ['기존 반영구가 남아 있어도 되나요?', '현재 상태를 사진으로 먼저 확인한 뒤 안내드립니다.'], ['아프지 않나요?', '통증은 개인차가 있으며, 진행 중 상태를 계속 확인하며 진행합니다.'], ['리터치는 꼭 받아야 하나요?', '결과를 자연스럽게 완성하기 위해 권장드립니다. 시기는 상담 시 안내드립니다.'], ['유지 기간은 어느 정도인가요?', '피부 타입과 관리에 따라 달라지며, 상담 시 안내드립니다.']],
         cta: '어떤 프로그램이 맞을지 모르겠다면\n사진 한 장만 보내주세요.', ctaA: '네이버 예약', ctaB: '카톡 상담'
       },
       en: {
@@ -140,7 +141,7 @@ class Component extends DCLogic {
         caps: ['Individual hair-like strokes', 'Strokes combined with soft shading', 'Bringing out natural lip colour and line'],
         who: [['My brows are sparse or patchy', 'Bold brows feel heavy', 'I want natural strokes'], ['I draw my brows daily', 'My brows are uneven', 'I want a defined look'], ['My lips look pale or dull', 'My lip line is faint', 'I want a natural tint']],
         specK: ['DESIGN POINT', 'DURATION', 'TOUCH-UP', 'LONGEVITY'],
-        specV: [['Direction · length · grain', '[N] h [TBC]', 'After [N] weeks [TBC]', 'Varies [TBC]'], ['Density and balance', '[N] h [TBC]', 'After [N] weeks [TBC]', 'Varies [TBC]'], ['Colour · line · tone', '[N] h [TBC]', 'After [N] weeks [TBC]', 'Varies [TBC]']],
+        specV: [['Direction · length · grain', 'Advised at consultation', 'Advised at consultation', 'Varies with skin type and care'], ['Density and balance', 'Advised at consultation', 'Advised at consultation', 'Varies with skin type and care'], ['Colour · line · tone', 'Advised at consultation', 'Advised at consultation', 'Varies with skin type and care']],
         forWho: 'Tick if this is you!',
         cmpTitle: 'Compare at a glance', cols: ['Hair stroke', 'Feathering', 'Personal lip'],
         rowK: ['Natural even bare-faced', 'Defined, polished look', 'Sparse brows', 'Pale lip colour', 'Less daily makeup time'],
@@ -148,7 +149,7 @@ class Component extends DCLogic {
         procTitle: 'Every program, the same 4 steps',
         steps: [{ no: '01', k: 'Kakao consult', v: 'Send one photo' }, { no: '02', k: 'Design', v: 'Drawn and approved first' }, { no: '03', k: 'Procedure', v: 'With the agreed design' }, { no: '04', k: 'Touch-up', v: 'Refined once more' }],
         faqTitle: 'FAQ',
-        faq: [['Can I consult first?', 'Yes, send a photo on Kakao and we will advise.'], ['Can I come with old PMU?', 'We check your current state from a photo first.'], ['Does it hurt?', '[TBC] Sensitivity varies.'], ['Do I need a touch-up?', '[TBC]'], ['How long does it last?', '[TBC] Varies with skin type and care.']],
+        faq: [['Can I consult first?', 'Yes, send a photo on Kakao and we will advise.'], ['Can I come with old PMU?', 'We check your current state from a photo first.'], ['Does it hurt?', 'Sensitivity varies; we keep checking how you feel throughout.'], ['Do I need a touch-up?', 'Recommended to complete a natural result. Timing is advised at consultation.'], ['How long does it last?', 'Varies with skin type and care; we advise at consultation.']],
         cta: 'Not sure which program fits?\nJust send us one photo.', ctaA: 'Book on Naver', ctaB: 'Kakao consult'
       }
     };

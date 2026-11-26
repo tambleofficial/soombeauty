@@ -16,6 +16,7 @@
 
 
 <script src="/assets/sj-cms.js?v=1"></script>
+<script src="/assets/soom-i18n.js?v=1"></script>
 <link rel="stylesheet" href="/assets/soom-m.css?v=1">
 <script src="./support.js"></script>
 </head>
@@ -141,7 +142,7 @@ class Component extends DCLogic {
   state = { lang: (window.localStorage && localStorage.getItem('soom-lang')) || 'ko' };
   componentDidMount() { document.documentElement.lang = this.state.lang; }
   renderVals() {
-    const EXD = {"ko":{"g":{"title":"한국 · 태국 · 중국에서 인정받은 디자인","items":[{"no":"🇰🇷","k":"KOREA","v":"활동 · 교육 내용 확인 후 입력"},{"no":"🇹🇭","k":"THAILAND","v":"활동 · 교육 내용 확인 후 입력"},{"no":"🇨🇳","k":"CHINA","v":"활동 · 교육 내용 확인 후 입력"}]},"p":{"title":"숨뷰티가 지키는 세 가지 약속","items":[{"no":"01","k":"청결한 공간","v":"청결하고 쾌적한 공간을 늘 유지합니다"},{"no":"02","k":"충분한 상담","v":"디자인을 먼저 그리고, 확인 후에만 진행합니다"},{"no":"03","k":"끝까지 관리","v":"시술 후 리터치와 관리까지 함께합니다"}]}},"en":{"g":{"title":"Recognised in Korea, Thailand and China","items":[{"no":"🇰🇷","k":"KOREA","v":"Activity details to be added"},{"no":"🇹🇭","k":"THAILAND","v":"Activity details to be added"},{"no":"🇨🇳","k":"CHINA","v":"Activity details to be added"}]},"p":{"title":"Three promises we keep","items":[{"no":"01","k":"A clean space","v":"We always keep the studio clean and pleasant"},{"no":"02","k":"Unhurried consultation","v":"We draw first and proceed only after you approve"},{"no":"03","k":"Care to the end","v":"Touch-ups and aftercare included in the journey"}]}}}; const ex = EXD[this.state.lang] || EXD.ko;
+    const EXD = {"ko":{"g":{"title":"한국 · 태국 · 중국에서 인정받은 디자인","items":[{"no":"🇰🇷","k":"KOREA","v":"GLOBAL MASTER 활동"},{"no":"🇹🇭","k":"THAILAND","v":"GLOBAL MASTER 활동"},{"no":"🇨🇳","k":"CHINA","v":"GLOBAL MASTER 활동"}]},"p":{"title":"숨뷰티가 지키는 세 가지 약속","items":[{"no":"01","k":"청결한 공간","v":"청결하고 쾌적한 공간을 늘 유지합니다"},{"no":"02","k":"충분한 상담","v":"디자인을 먼저 그리고, 확인 후에만 진행합니다"},{"no":"03","k":"끝까지 관리","v":"시술 후 리터치와 관리까지 함께합니다"}]}},"en":{"g":{"title":"Recognised in Korea, Thailand and China","items":[{"no":"🇰🇷","k":"KOREA","v":"GLOBAL MASTER activity"},{"no":"🇹🇭","k":"THAILAND","v":"GLOBAL MASTER activity"},{"no":"🇨🇳","k":"CHINA","v":"GLOBAL MASTER activity"}]},"p":{"title":"Three promises we keep","items":[{"no":"01","k":"A clean space","v":"We always keep the studio clean and pleasant"},{"no":"02","k":"Unhurried consultation","v":"We draw first and proceed only after you approve"},{"no":"03","k":"Care to the end","v":"Touch-ups and aftercare included in the journey"}]}}}; const ex = EXD[this.state.lang] || EXD.ko;
     const HR = {"ko":{"eb":"ABOUT","title":"숨을 고르듯,\n한 사람의 얼굴을 천천히.","sub":"자연스러운 아름다움을 추구하는 프리미엄 뷰티샵, 숨뷰티를 소개합니다.","items":[["01","철학","[숨:눈썹&입술]","#philosophy"],["02","대표원장","인터뷰 · 경력","#director"],["03","공간","1:1 프라이빗 스튜디오","#studio"]]},"en":{"eb":"ABOUT","title":"Like catching a breath,\nwe take our time with every face.","sub":"Meet SOOM BEAUTY, a premium studio devoted to natural beauty.","items":[["01","Philosophy","[SOOM: Brows & Lips]","#philosophy"],["02","Director","Interview · career","#director"],["03","Studio","A private 1:1 space","#studio"]]}}; const HX = HR[this.state.lang] || HR.ko;
     const hero = { ...HX, label: this.state.lang === 'en' ? "Brand" : "브랜드", items: HX.items.map(x => ({ no: x[0], k: x[1], v: x[2], href: x[3], target: /^https/.test(x[3]) ? '_blank' : '_self', arrow: x[3][0] === '#' ? '↓' : '→' })) };
     const T = {
@@ -154,11 +155,11 @@ class Component extends DCLogic {
         defs: [{ no: '1', en: 'NATURAL', v: '애쓰지 않아도 이어지는 자연스러운 리듬. 원래 내 것처럼 보이는 디자인.' }, { no: '2', en: 'BALANCE', v: '얼굴 전체와의 조화. 나에게 가장 잘 어울리는 균형.' }, { no: '3', en: 'COMFORT', v: '처음이어도 편하게 숨 쉴 수 있는 상담과 공간.' }, { no: '4', en: 'PERSONAL', v: '한 사람의 얼굴에 맞춘 1:1 디자인.' }],
         prTitle: '숨뷰티의 디자인은 이 4단계로 만들어집니다',
         principles: [{ no: '01', en: 'SEE', k: '얼굴을 봅니다', v: '인상 · 비율 · 기존 결' }, { no: '02', en: 'LISTEN', k: '이야기를 듣습니다', v: '원하는 분위기와 고민' }, { no: '03', en: 'DESIGN', k: '먼저 그립니다', v: '확인 후에만 진행' }, { no: '04', en: 'DETAIL', k: '끝까지 다듬습니다', v: '리터치와 사후 관리' }],
-        dirName: '[원장 이름]', dirRole: '숨뷰티 대표원장',
-        qa: [{ q: '왜 ‘자연스러움’인가요?', a: '[원장님 답변 입력]' }, { q: '디자인할 때 가장 먼저 보는 것은?', a: '[원장님 답변 입력]' }, { q: '처음 오시는 분께 하고 싶은 말은?', a: '[원장님 답변 입력]' }],
-        certs: [{ k: 'GLOBAL MASTER', v: '🇰🇷 🇹🇭 🇨🇳 [확인]' }, { k: 'CERTIFICATE', v: '[자격 · 인증 입력]' }, { k: 'CAREER', v: '[경력 입력]' }],
+        dirName: '대표원장 이세연', dirRole: '숨뷰티 대표원장',
+        qa: [{ q: '왜 ‘자연스러움’인가요?', a: '진한 눈썹보다 자연스러운 결을 추구합니다. 자연스러움은 디테일에서 완성된다고 생각합니다.' }, { q: '디자인할 때 가장 먼저 보는 것은?', a: '얼굴 전체의 균형입니다. 한 분 한 분의 얼굴에 맞춰 섬세하게 설계합니다.' }, { q: '처음 오시는 분께 하고 싶은 말은?', a: '처음 방문하셔도 부담 없이 편안하게 받으실 수 있도록, 충분히 상담하고 천천히 진행합니다.' }],
+        certs: [{ k: 'GLOBAL MASTER', v: '🇰🇷 🇹🇭 🇨🇳 한국 · 태국 · 중국' }, { k: 'SPECIALTY', v: 'K-beauty 헤어스트록 · 패더링 전문' }, { k: 'CAREER', v: '시술 경력 15년 · 누적 고객 20,000명' }],
         stTitle: '처음 오셔도 편안한 공간',
-        studio: [{ no: '01', v: '상담 공간' }, { no: '02', v: '시술 공간' }, { no: '03', v: '디테일' }],
+        studio: [{ no: '01', v: '광명트리플타워 외관' }, { no: '02', v: '2층 219호 안내' }, { no: '03', v: '건물 주차장 (무료)' }],
         cta: '숨뷰티의 디자인이 궁금하다면\n프로그램부터 살펴보세요.', ctaA: '프로그램 보기', ctaB: '상담하기'
       },
       en: {
@@ -170,16 +171,16 @@ class Component extends DCLogic {
         defs: [{ no: '1', en: 'NATURAL', v: 'A rhythm that flows without effort. A design that looks like your own.' }, { no: '2', en: 'BALANCE', v: 'Harmony with the whole face; the balance that suits you best.' }, { no: '3', en: 'COMFORT', v: 'A consultation and space where you can breathe easy.' }, { no: '4', en: 'PERSONAL', v: 'A 1:1 design made for one face.' }],
         prTitle: 'Every SOOM design follows these 4 steps',
         principles: [{ no: '01', en: 'SEE', k: 'We look', v: 'Impression · proportion · grain' }, { no: '02', en: 'LISTEN', k: 'We listen', v: 'Your mood and concerns' }, { no: '03', en: 'DESIGN', k: 'We draw first', v: 'Only after you approve' }, { no: '04', en: 'DETAIL', k: 'We refine', v: 'Touch-up and aftercare' }],
-        dirName: '[Director]', dirRole: 'Founder & Director',
-        qa: [{ q: 'Why “natural”?', a: '[Director’s answer]' }, { q: 'What do you look at first?', a: '[Director’s answer]' }, { q: 'A word for first-time clients?', a: '[Director’s answer]' }],
-        certs: [{ k: 'GLOBAL MASTER', v: '🇰🇷 🇹🇭 🇨🇳 [TBC]' }, { k: 'CERTIFICATE', v: '[TBC]' }, { k: 'CAREER', v: '[TBC]' }],
+        dirName: 'Director Lee Se-yeon', dirRole: 'Founder & Director',
+        qa: [{ q: 'Why “natural”?', a: 'I pursue a natural grain rather than bold brows. I believe natural beauty is completed in the details.' }, { q: 'What do you look at first?', a: 'The balance of the whole face. Every design is planned carefully for each face.' }, { q: 'A word for first-time clients?', a: 'Even on your first visit, we consult fully and go slowly so you feel at ease.' }],
+        certs: [{ k: 'GLOBAL MASTER', v: '🇰🇷 🇹🇭 🇨🇳 Korea · Thailand · China' }, { k: 'SPECIALTY', v: 'K-beauty hair stroke · feathering' }, { k: 'CAREER', v: '15 years of practice · 20,000+ clients' }],
         stTitle: 'A space that feels easy, even the first time',
-        studio: [{ no: '01', v: 'Consultation' }, { no: '02', v: 'Treatment room' }, { no: '03', v: 'Details' }],
+        studio: [{ no: '01', v: 'Gwangmyeong Triple Tower' }, { no: '02', v: '2F, Unit 219' }, { no: '03', v: 'Free parking' }],
         cta: 'Curious about SOOM design?\nStart with our programs.', ctaA: 'View programs', ctaB: 'Consult'
       }
     };
     const L = this.state.lang;
-    const DIRX = { ko: { dirName: '원장 이름', dirHead: '얼굴을 먼저 보고,\n그다음에 디자인합니다.', dirQuote: '원장님의 철학 한 문장이 들어갈 자리입니다', dirCaps: [{ k: 'GLOBAL MASTER', v: '🇰🇷 🇹🇭 🇨🇳 활동' }, { k: 'SPECIALTY', v: '헤어스트록 · 패더링 · 퍼스널 입술' }, { k: 'CAREER', v: '경력 정보 입력' }, { k: 'EDUCATION', v: '교육 · 자격 정보 입력' }] }, en: { dirName: 'Director name', dirHead: 'We look at your face first,\nthen we design.', dirQuote: 'A line from the director’s philosophy goes here', dirCaps: [{ k: 'GLOBAL MASTER', v: '🇰🇷 🇹🇭 🇨🇳' }, { k: 'SPECIALTY', v: 'Hair stroke · feathering · lips' }, { k: 'CAREER', v: 'Career details' }, { k: 'EDUCATION', v: 'Training · certification' }] } };
+    const DIRX = { ko: { dirName: '원장 이름', dirHead: '얼굴을 먼저 보고,\n그다음에 디자인합니다.', dirQuote: '자연스러움은 디테일에서 완성됩니다', dirCaps: [{ k: 'GLOBAL MASTER', v: '🇰🇷 🇹🇭 🇨🇳 활동' }, { k: 'SPECIALTY', v: '헤어스트록 · 패더링 · 퍼스널 입술' }, { k: 'CAREER', v: '시술 경력 15년 · 누적 고객 20,000명' }, { k: 'EXPERTISE', v: 'K-beauty 헤어스트록 · 패더링 전문 · 1:1 퍼스널 디자인' }] }, en: { dirName: 'Director name', dirHead: 'We look at your face first,\nthen we design.', dirQuote: 'Natural beauty is completed in the details', dirCaps: [{ k: 'GLOBAL MASTER', v: '🇰🇷 🇹🇭 🇨🇳' }, { k: 'SPECIALTY', v: 'Hair stroke · feathering · lips' }, { k: 'CAREER', v: '15 years of practice · 20,000+ clients' }, { k: 'EXPERTISE', v: 'K-beauty hair stroke · feathering · 1:1 personal design' }] } };
     return { ex, hero, t: Object.assign({}, T[L] || T.ko, DIRX[L] || DIRX.ko), lang: L, setLang: l => { localStorage.setItem('soom-lang', l); document.documentElement.lang = l; this.setState({ lang: l }); } };
   }
 }

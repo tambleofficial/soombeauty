@@ -5,6 +5,7 @@
  */
 (function () {
   var E = window.__CMS_EDIT || {}, C = window.__CMS || {};
+  document.documentElement.classList.add('sj-edit');
   var PAGES = [['home', '홈', '/'], ['about', 'ABOUT 브랜드', '/about'], ['program', 'PROGRAM 시술', '/program'], ['cases', 'CASES 사례', '/cases'], ['journal', 'JOURNAL 저널', '/journal'], ['contact', 'CONTACT 상담·오시는 길', '/contact']];
   E.page = E.page || 'home';
   var norm = window.__sjNorm || function (s) { return String(s || '').replace(/\u00a0/g, ' ').replace(/[ \t\r\f\v]+/g, ' ').replace(/ *\n */g, '\n').trim(); };
@@ -140,7 +141,7 @@
       var id = '__UP' + (++upN) + '__';
       images.push({ id: id, type: 'image/jpeg', data: data.split(',')[1] });
       media[key] = id; dirty.media = true; changes++; upd();
-      if (isSlot) document.querySelectorAll('[data-slot-id]').forEach(function (o) { if (o.getAttribute('data-slot-id') === s.getAttribute('data-slot-id') && window.__sjFillSlot) window.__sjFillSlot(o, data); });
+      if (isSlot) document.querySelectorAll('[data-slot-id]').forEach(function (o) { if (o.getAttribute('data-slot-id') === s.getAttribute('data-slot-id') && window.__sjFillSlot) { o.setAttribute('data-sj-preview', ''); window.__sjFillSlot(o, data); } });
       else document.querySelectorAll('img[src]').forEach(function (o) { var op = pathOf(o.getAttribute('src')); if (o === s || op === key || o.getAttribute('data-sj-key') === key) { o.setAttribute('data-sj-key', key); o.setAttribute('src', data); } });
       say('사진을 바꿨어요. "저장하기"를 눌러야 홈페이지에 반영돼요.');
     };

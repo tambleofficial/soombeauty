@@ -20,7 +20,7 @@
 
   /* 빈 사진 칸(data-slot-id): 틀 크기·모양은 그대로, 사진은 자르지 않고 전체 표시(남는 곳은 같은 사진을 흐리게), 비율이 거의 같으면 꽉 채움 */
   var css = document.createElement('style');
-  css.textContent = '.sj-fill{position:absolute;inset:0;z-index:1;overflow:hidden;border-radius:inherit;pointer-events:none}.sj-fill img{position:absolute;inset:0;width:100%;height:100%;display:block}.sj-fill .sj-b{object-fit:cover;filter:blur(18px);transform:scale(1.15)}.sj-fill .sj-f{object-fit:contain}.sj-fill.sj-cover .sj-b{display:none}.sj-fill.sj-cover .sj-f{object-fit:cover}[data-sj-filled]{color:transparent!important}[data-sj-filled]>:not(.sj-fill):not([data-keep]){visibility:hidden}';
+  css.textContent = '.sj-fill{position:absolute;inset:0;z-index:1;overflow:hidden;border-radius:inherit;pointer-events:none}.sj-fill img{position:absolute;inset:0;width:100%;height:100%;display:block}.sj-fill .sj-b{object-fit:cover;filter:blur(18px);transform:scale(1.15)}.sj-fill .sj-f{object-fit:contain}.sj-fill.sj-cover .sj-b{display:none}.sj-fill.sj-cover .sj-f{object-fit:cover}[data-sj-filled]{color:transparent!important}[data-sj-filled]>:not(.sj-fill):not([data-keep]){visibility:hidden}html:not(.sj-edit) [data-slot-id^="home-review-"]:not([data-sj-filled]){display:none}';
   (document.head || document.documentElement).appendChild(css);
   function fillSlot(el, src) {
     if (!el || !src) return;
@@ -46,7 +46,11 @@
   function fillAll(root) {
     var list = (root && root.querySelectorAll) ? [].slice.call(root.querySelectorAll('[data-slot-id]')) : [];
     if (root && root.matches && root.matches('[data-slot-id]')) list.unshift(root);
-    for (var i = 0; i < list.length; i++) { var id = list[i].getAttribute('data-slot-id'), s = slotSrc(id); if (s && !/^__UP/.test(s)) fillSlot(list[i], s); }
+    for (var i = 0; i < list.length; i++) {
+      var el = list[i], id = el.getAttribute('data-slot-id'), s = slotSrc(id);
+      if (s && !/^__UP/.test(s)) fillSlot(el, s);
+      else if (el.hasAttribute('data-sj-filled') && !el.hasAttribute('data-sj-preview')) { var bx = el.querySelector(':scope > .sj-fill'); if (bx) bx.remove(); el.removeAttribute('data-sj-filled'); }
+    }
   }
   window.__sjFillAll = fillAll;
   if (mkeys.some(function (k) { return k.indexOf('slot:') === 0; })) {
