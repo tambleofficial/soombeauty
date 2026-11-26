@@ -30,6 +30,7 @@ export function inject(html, data, extraHead = '', serverText = true) {
 const BOT_RE = /Yeti|NaverBot|Googlebot|Google-InspectionTool|AdsBot-Google|Storebot-Google|bingbot|BingPreview|msnbot|Daumoa|Daum|kakaotalk-scrap|Applebot|DuckDuckBot|YandexBot|Baiduspider|Slurp|facebookexternalhit|Twitterbot|LinkedInBot|Pinterest/i;
 const SEO_PAGES = { '/': 'home', '/about': 'about', '/program': 'program', '/cases': 'cases', '/journal': 'journal', '/contact': 'contact' };
 const APEX = '';
+const ASSET = { home: '/Home.dc', about: '/About.dc', program: '/Program.dc', cases: '/Cases.dc', journal: '/Journal.dc', contact: '/Contact.dc' };
 
 export async function onRequest(ctx) {
   const url = new URL(ctx.request.url);
@@ -62,7 +63,12 @@ export async function onRequest(ctx) {
     }
   }
 
-  const res = await ctx.next();
+  // 페이지는 깔끔한 주소(/about 등) 그대로 보여줌. _redirects 로 .dc.html 을 가리키면 Pages 가 /About.dc 로 308 이동시켜 주소가 바뀜
+  if (/^\/[A-Za-z]+\.dc(\.html)?$/.test(p) && !/^\/Soom/.test(p)) {
+    const back = Object.keys(ASSET).find((k) => ASSET[k].toLowerCase() === p.replace(/\.html$/, '').toLowerCase());
+    if (back) return Response.redirect(new URL((back === 'home' ? '/' : '/' + back) + url.search, url).toString(), 301);
+  }
+  const res = key ? await ctx.env.ASSETS.fetch(new URL(ASSET[key], url)) : await ctx.next();
   const type = res.headers.get('content-type') || '';
   if (!type.includes('text/html') || p.endsWith('.dc.html') || res.status !== 200) return res;
   const data = await loadCms(ctx, url);

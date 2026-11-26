@@ -167,14 +167,14 @@ class Component extends DCLogic {
       en: { consult: 'Consult', book: 'Book', subs: ['Our story', 'Programs', 'Selected work', 'Beauty journal', 'Consult · Book · Visit'], float: ['Naver booking', 'Kakao chat', '010-5005-3809', 'Directions', 'Instagram'] }
     };
     const t = T[lang] || T.ko;
-    const pages = [['about', 'ABOUT', 'About.dc.html'], ['program', 'PROGRAM', 'Program.dc.html'], ['cases', 'CASES', 'Cases.dc.html'], ['journal', 'JOURNAL', 'Journal.dc.html'], ['contact', 'CONTACT', 'Contact.dc.html']];
+    const pages = [['about', 'ABOUT', '/about'], ['program', 'PROGRAM', '/program'], ['cases', 'CASES', '/cases'], ['journal', 'JOURNAL', '/journal'], ['contact', 'CONTACT', '/contact']];
     const setLang = l => { this.props.onLang && this.props.onLang(l); };
     const hf = this.state.hoverF; const light = !!this.props.heroDark && !this.state.scrolled && !this.state.menuOpen;
     const fl = [
       { href: 'https://map.naver.com/p/entry/place/2032343522', target: '_blank', cal: true },
       { href: '#kakao', target: '_self', chat: true },
       { href: 'tel:01050053809', target: '_self', phone: true },
-      { href: 'Contact.dc.html#location', target: '_self', pin: true },
+      { href: '/contact#location', target: '_self', pin: true },
       { href: 'https://www.instagram.com/soom_pmu', target: '_blank', ig: true }
     ];
     return {

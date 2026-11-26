@@ -1,8 +1,2 @@
-/            /Home.dc.html      200
-/about       /About.dc.html     200
-/program     /Program.dc.html   200
-/cases       /Cases.dc.html     200
-/journal     /Journal.dc.html   200
-/contact     /Contact.dc.html   200
-/index.html  /                  301
-/feed        /rss.xml           301
+/index.html  /  301
+/feed        /rss.xml  301

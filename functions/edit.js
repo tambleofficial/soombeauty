@@ -3,7 +3,7 @@
 // - 로그인 후: 실제 홈페이지 화면 + 편집 도구(/assets/sj-editor.js)
 // 편집할 페이지: /edit?p=brand 처럼 지정 (없으면 홈)
 import { loadCms, inject } from './_middleware.js';
-const PAGES = { home: '/', about: '/about', program: '/program', cases: '/cases', journal: '/journal', contact: '/contact' };
+const PAGES = { home: '/Home.dc', about: '/About.dc', program: '/Program.dc', cases: '/Cases.dc', journal: '/Journal.dc', contact: '/Contact.dc' };
 
 async function hmac(key, msg) {
   const k = await crypto.subtle.importKey('raw', new TextEncoder().encode(key), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
