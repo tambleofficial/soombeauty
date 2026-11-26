@@ -31,10 +31,17 @@
     el.style.overflow = 'hidden';
     box.setAttribute('data-src', src); el.setAttribute('data-sj-filled', '');
     var f = box.querySelector('.sj-f'), b = box.querySelector('.sj-b');
+    f.alt = altOf(el.getAttribute('data-slot-id') || '');
     f.onload = function () { var r = el.getBoundingClientRect(); if (!r.width || !r.height) return; var ir = f.naturalWidth / f.naturalHeight, br = r.width / r.height; box.classList.toggle('sj-cover', 1 - Math.min(ir / br, br / ir) < 0.04); };
     b.src = src; f.src = src;
   }
   window.__sjFillSlot = fillSlot;
+  // 올린 사진의 대체 문구 (검색·접근성)
+  function altOf(id) {
+    var A = [[/^home-hero/, '숨뷰티 대표 사진'], [/^home-brand/, '숨뷰티 분위기 사진'], [/director/, '숨뷰티 대표원장'], [/^home-prog-01/, '숨뷰티 눈썹문신 시술 사진'], [/^home-prog-02/, '숨뷰티 입술 반영구 시술 사진'], [/^prog-hair/, '숨뷰티 헤어스트록 눈썹 시술 사진'], [/^prog-feather/, '숨뷰티 패더링 눈썹 시술 사진'], [/^prog-lip/, '숨뷰티 퍼스널 입술 시술 사진'], [/case/, '숨뷰티 시술 사례 사진'], [/step/, '숨뷰티 시술 과정 사진'], [/review/, '숨뷰티 고객 후기 사진'], [/studio/, '숨뷰티 공간 사진'], [/film/, '숨뷰티 시술 영상 미리보기']];
+    for (var i = 0; i < A.length; i++) if (A[i][0].test(id)) return A[i][1];
+    return '숨뷰티 사진';
+  }
   function slotSrc(id) { return media['slot:' + id]; }
   function fillAll(root) {
     var list = (root && root.querySelectorAll) ? [].slice.call(root.querySelectorAll('[data-slot-id]')) : [];
