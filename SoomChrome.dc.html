@@ -37,7 +37,7 @@
     </sc-if>
     <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex;align-items:center;gap:4px">
-        <button onClick="{{ toggleLang }}" style="white-space:nowrap;flex-shrink:0;min-width:44px;height:44px;padding:0 10px;background:none;border:0;font-size:11px;letter-spacing:.16em;color:{{ ink }};font-family:inherit">{{ otherLang }}</button>
+        <div data-mx="mlang" style="display:flex;align-items:center;flex-shrink:0;white-space:nowrap;font-size:10.5px;letter-spacing:.1em;font-weight:500"><button onClick="{{ setKo }}" style="min-width:30px;height:44px;padding:0 4px;background:none;border:0;font:inherit;letter-spacing:inherit;cursor:pointer;color:{{ koColor }}">KR</button><button onClick="{{ setEn }}" style="min-width:30px;height:44px;padding:0 4px;background:none;border:0;font:inherit;letter-spacing:inherit;cursor:pointer;color:{{ enColor }}">EN</button><button onClick="{{ setJa }}" style="min-width:30px;height:44px;padding:0 4px;background:none;border:0;font:inherit;letter-spacing:inherit;cursor:pointer;color:{{ jaColor }}">JP</button><button onClick="{{ setZh }}" style="min-width:30px;height:44px;padding:0 4px;background:none;border:0;font:inherit;letter-spacing:inherit;cursor:pointer;color:{{ zhColor }}">CN</button></div>
         <button onClick="{{ toggleMenu }}" aria-label="Menu" style="width:44px;height:44px;background:none;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:0">
           <span style="display:block;width:24px;height:1px;background:{{ ink }}"></span>
           <span style="display:block;width:16px;height:1px;background:{{ ink }};margin-left:8px"></span>

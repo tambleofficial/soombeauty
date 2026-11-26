@@ -8,7 +8,6 @@
     "slot:home-prog-01": "/assets/uploads/soom-v3-home-prog-01.jpg",
     "slot:home-case-5": "/assets/uploads/soom-v2-home-case-5.jpg",
     "slot:home-case-1": "/assets/uploads/soom-v2-home-case-1.jpg",
-    "slot:home-studio-2": "/assets/uploads/soom-v2-home-studio-2.jpg",
     "slot:about-studio-02": "/assets/uploads/soom-v2-about-studio-02.jpg",
     "slot:home-studio-0": "/assets/uploads/soom-v2-home-studio-0.jpg",
     "slot:home-studio-1": "/assets/uploads/soom-v2-home-studio-1.jpg",
@@ -18,13 +17,14 @@
     "slot:about-studio-01": "/assets/uploads/soom-v2-about-studio-01.jpg",
     "slot:case-3": "/assets/uploads/soom-v2-case-3.jpg",
     "slot:home-case-3": "/assets/uploads/soom-v2-home-case-3.jpg",
-    "slot:home-hero": "/assets/uploads/soom-v2-home-hero.jpg",
-    "slot:home-studio-3": "/assets/uploads/soom-v2-home-studio-3.jpg",
     "slot:case-6": "/assets/uploads/soom-v2-case-6.jpg",
     "slot:home-brand-2": "/assets/uploads/soom-v2-home-prog-01.jpg",
     "slot:home-case-6": "/assets/uploads/soom-v2-home-case-6.jpg",
     "slot:case-1": "/assets/uploads/soom-v3-case-1.jpg",
     "slot:case-7": "/assets/uploads/soom-v2-case-7.jpg",
-    "slot:case-4": "/assets/uploads/soom-v2-case-4.jpg"
+    "slot:case-4": "/assets/uploads/soom-v2-case-4.jpg",
+    "slot:home-review-0": "/assets/uploads/soom-v2-home-review-0.jpg",
+    "slot:home-review-1": "/assets/uploads/soom-v2-home-review-1.jpg",
+    "slot:home-review-2": "/assets/uploads/soom-v2-home-review-2.jpg"
   }
 }

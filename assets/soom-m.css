@@ -1,4 +1,6 @@
 /* 숨뷰티 모바일 재구성 (PC 는 그대로, 760px 미만만) */
+/* 상단 메뉴 가운데 정렬 (오른쪽 버튼과 겹치지 않는 넓은 화면에서) */
+@media (min-width: 1360px) { header nav { position: absolute; left: 50%; transform: translateX(-50%); } }
 @media (max-width: 759.98px) {
   /* ── 여백 ── */
   section[style*="padding: clamp(90px, 10vw, 140px)"], section[style*="padding: clamp(110px, 13vw, 170px)"], section[style*="padding: clamp(130px, 15vw, 200px)"] { padding-top: 56px !important; padding-bottom: 56px !important; }
