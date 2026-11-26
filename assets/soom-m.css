@@ -50,4 +50,31 @@
 
   /* ── 2단 글 → 1단 ── */
   [style*="column-count: 2"] { column-count: 1 !important; }
+
+  /* ── 2026-11-27 모바일 재구성 ── */
+  /* GLOBAL MASTER · OUR PROMISE: 2열 카드 → 1열 촘촘 목록 */
+  section[data-screen-label="g"]:not(#zz) [style*="minmax(min(100%, 230px)"],
+  section[data-screen-label="p"]:not(#zz) [style*="minmax(min(100%, 230px)"] { grid-template-columns: 1fr !important; gap: 8px !important; }
+  section[data-screen-label="g"]:not(#zz) [style*="minmax(min(100%, 230px)"] > *,
+  section[data-screen-label="p"]:not(#zz) [style*="minmax(min(100%, 230px)"] > * { min-height: 0 !important; padding: 14px 16px !important; display: grid !important; grid-template-columns: auto 1fr !important; grid-template-rows: auto auto !important; column-gap: 12px !important; row-gap: 2px !important; align-items: baseline; }
+  section[data-screen-label="g"]:not(#zz) [style*="minmax(min(100%, 230px)"] > * > span:first-child,
+  section[data-screen-label="p"]:not(#zz) [style*="minmax(min(100%, 230px)"] > * > span:first-child { grid-row: span 2; align-self: center; font-size: 14px !important; }
+  section[data-screen-label="g"]:not(#zz) [style*="minmax(min(100%, 230px)"] > * > b,
+  section[data-screen-label="p"]:not(#zz) [style*="minmax(min(100%, 230px)"] > * > b { font-size: 17px !important; }
+  section[data-screen-label="g"]:not(#zz) [style*="minmax(min(100%, 230px)"] > * > span:last-child,
+  section[data-screen-label="p"]:not(#zz) [style*="minmax(min(100%, 230px)"] > * > span:last-child { margin-top: 0 !important; font-size: 14px !important; line-height: 1.55 !important; }
+
+  /* 한눈에 비교: 가로 스크롤 표 → 화면 폭에 맞춘 표 */
+  section[data-screen-label="02 Compare"] [style*="overflow-x: auto"] { overflow-x: visible !important; }
+  section[data-screen-label="02 Compare"] [style*="min-width: 680px"] { min-width: 0 !important; grid-template-columns: 1.25fr .8fr .8fr .8fr !important; }
+  section[data-screen-label="02 Compare"] [style*="min-width: 680px"] > * { padding: 13px 3px !important; font-size: 13px !important; line-height: 1.4 !important; word-break: keep-all; }
+  section[data-screen-label="02 Compare"] [style*="min-width: 680px"] > b { font-size: 12.5px !important; letter-spacing: -.03em; }
+  section[data-screen-label="02 Compare"] [style*="min-width: 680px"] > span[style*="text-align: center"] { font-size: 15px !important; }
+
+  /* 저널 첫 화면 기사: 세로 구분선·여백 정리 */
+  section[data-screen-label="02 Front Page"] article[style*="border-right"] { border-right: 0 !important; padding: 26px 0 28px !important; border-bottom: 1px solid #D8C7B2; gap: 12px !important; }
+  section[data-screen-label="02 Front Page"] article[style*="border-right"] h2 { font-size: 26px !important; }
+  section[data-screen-label="02 Front Page"] article[style*="border-bottom"] { padding: 22px 0 !important; gap: 10px !important; }
+  section[data-screen-label="02 Front Page"] article h2 { font-size: 21px !important; }
+  section[data-screen-label="02 Front Page"] article p { font-size: 14.5px !important; line-height: 1.75 !important; }
 }
